@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERS - Home</title>
-    <script defer src="./home.js"></script>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <script defer src="./viewOptionsController.js"></script>
 </head>
 <body>
     <div class="filter-container">
@@ -16,11 +17,71 @@
         <input type="radio" name="view" id="pending">
         <label for="pending">View Pending</label><br>
     </div>
-    <ul>
-        <li class="pending">pending</li>
-        <li class="past">past</li>
-        <li class="pending">pending</li>
-        <li class="past">past</li>
-    </ul>
+    <div class="tickets-container">
+        <div class="ticket-card">
+            <div class="small-heading">
+                <p class="ticket-type">Lodging</p>
+                <p class="ticket-status approved">Approved</p>
+            </div>
+            <div class="ticket-information">
+                <div class="ticket-heading">
+                    <p>ID:</p>
+                    <p>Amount:</p>
+                    <p>Name:</p>
+                    <p>Submitted At:</p>
+                </div>
+                <div class="ticket-details">
+                    <p>296</p>
+                    <p>$1,538</p>
+                    <p>Troy Fiawoo</p>
+                    <p>10/20/20 @2:00pm</p>
+                </div>
+                <div class="description-container">
+                    <p>Description: 
+                        <span>This is the description</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ticket-card">
+            <div class="small-heading">
+                <p class="ticket-type">Lodging</p>
+                <p class="ticket-status pending">Pending</p>
+            </div>
+            <div class="ticket-information">
+                <div class="ticket-heading">
+                    <p>ID:</p>
+                    <p>Amount:</p>
+                    <p>Name:</p>
+                    <p>Submitted At:</p>
+                </div>
+                <div class="ticket-details">
+                    <p>296</p>
+                    <p>$1,538</p>
+                    <p>Troy Fiawoo</p>
+                    <p>10/20/20 @2:00pm</p>
+                </div>
+                <div class="description-container">
+                    <p>Description: 
+                        <span>This is the description</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <ul>
+        <li class="pending">
+            
+        </li>
+        <li class="pending">
+
+        </li>
+        <li class="past">
+
+        </li>
+        <li class="past">
+
+        </li>
+    </ul> -->
 </body>
 </html>

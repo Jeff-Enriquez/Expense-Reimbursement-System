@@ -1,4 +1,3 @@
-console.log('hit')
 let viewAll = document.querySelector("#all")
 let viewPast = document.querySelector("#past")
 let viewPending = document.querySelector('#pending')
