@@ -1,8 +1,8 @@
 let viewAll = document.querySelector("#all")
 let viewPast = document.querySelector("#past")
 let viewPending = document.querySelector('#pending')
-let pastTickets = document.querySelectorAll('.past')
-let pendingTickets = document.querySelectorAll('.pending')
+let pastTickets = document.querySelectorAll("[data-approved]")
+let pendingTickets = document.querySelectorAll("[data-pending]")
 let previousAction = 'all'
 
 viewAll.addEventListener('change', function() {
