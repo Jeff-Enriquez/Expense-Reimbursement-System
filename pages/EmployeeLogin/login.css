@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+      url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+      url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+  }
+* {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: antiquewhite;
+}
+.page-content {
+    margin: 50px auto;
+    width: 320px;
+    padding: 40px 25px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: Poppins-Bold, sans-serif;
+}
+.heading, .subheading {
+	text-align: center;
+    margin: 0;
+    display: block;
+}
+.heading {
+    font-size: 28px;
+    font-weight: 700;
+}
+.subheading {
+    font-size: 16px;
+    font-weight: 500;
+}
+.form {
+    padding: 20px;
+}
+.entry-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+.password-container {
+    margin: 10px 0 30px 0;
+}
+.entry-heading {
+    margin: 0;
+    font-size: 14px;
+}
+.input {
+    font-size: 16px;
+    padding: 8px 0 8px 35px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+.input:focus {
+    border-color: black;
+}
+.icon {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    color: gray;
+}
+.input:focus + .icon {
+    color: black;
+}
+.button {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    background-color: rgb(255, 194, 80);
+}
+.create-account-container {
+    border-top: 1px solid gray;
+    width: 90%;
+    margin: 10px auto 0 auto;
+}
+.create-account-container * {
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+}
+.create-account-link {
+    display: block;
+}
