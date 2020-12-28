@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&display=swap');
 /* Variables */
 :root {
-    --ticket-background-color: #fffffb;
-    --ticket-shadow-color: rgba(173, 216, 230, 0.5);
+    --ticket-background-color: rgba(249, 249, 249, 0.1);
+    --ticket-shadow-color: rgba(128, 128, 128, 0.1);
     --ticket-heading-color: gray;
     --ticket-heading-font: 'Poppins', sans-serif;
     --ticket-details-font: 'Roboto Mono', monospace;
