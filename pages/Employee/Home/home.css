@@ -12,6 +12,35 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+/* View Options */
+.filter-container {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 0;
+}
+.filter-status {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 0;
+}
+.filter-container button {
+    cursor: pointer;
+    font-family: var(--ticket-heading-font);
+    font-size: 18px;
+    padding: 2px 12px;
+    border-radius: 12px;
+    outline: none;
+    margin: 0 5px;
+}
+.selected {
+    color: green;
+    border-color: green;
+    background-color: rgb(245, 255, 244);
+}
+.not-selected {
+    background-color: inherit;
+    color: gray;
+}
 /* Tickets Container */
 .tickets-container {
     margin: 0 auto;

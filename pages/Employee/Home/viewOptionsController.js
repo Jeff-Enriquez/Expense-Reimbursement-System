@@ -5,37 +5,29 @@ let pastTickets = document.querySelectorAll("[data-approved]")
 let pendingTickets = document.querySelectorAll("[data-pending]")
 let previousAction = 'all'
 
-viewAll.addEventListener('change', function() {
-    if (this.checked) {
-      displayTickets('all')
-    }
-})
-
-viewPast.addEventListener('change', function() {
-    if (this.checked) {
-      displayTickets('past')
-    }
-})
-
-viewPending.addEventListener('change', function() {
-    if (this.checked) {
-      displayTickets('pending')
-    }
-})
+viewAll.onclick = function () { displayTickets('all') }
+viewPast.onclick = function () { displayTickets('past') }
+viewPending.onclick = function () { displayTickets('pending') }
 
 function displayTickets(action){
+    viewAll.className = "not-selected"
+    viewPast.className = "not-selected"
+    viewPending.className = "not-selected"
     if(action === 'all'){
+        viewAll.className = "selected"
         if(previousAction === 'pending'){
             displayPast()
         } else if (previousAction === 'past') {
             displayPending()
         }
     } else if(action === 'pending'){
+        viewPending.className = "selected"
         hidePast()
         if(previousAction === 'past'){
             displayPending();
         }
     } else if(action === 'past'){
+        viewPast.className = "selected"
         hidePending()
         if(previousAction === 'pending'){
             displayPast()

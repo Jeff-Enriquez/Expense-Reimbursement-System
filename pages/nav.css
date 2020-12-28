@@ -1,0 +1,33 @@
+.navbar {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.navP, .navImg {
+    margin: 0 .5em 0 .5em;
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.navImg {
+    left: 0%;
+    width: 30px;
+    height: 30px;
+}
+.navbar .navP:first-of-type {
+    left: 50px;
+}
+.navbar .navP:last-of-type {
+    right: 0%;
+}
+.navA {
+    color: white;
+    text-decoration: none;
+}
+.navA:visited {
+    color: white;
+}
