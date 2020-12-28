@@ -6,23 +6,26 @@
     height: 40px;
     background-color: rgba(0, 0, 0, 0.8);
 }
-.navP, .navImg {
+.navDiv {
     margin: 0 .5em 0 .5em;
     font-size: 1.5em;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
-.navImg {
+.navDiv:nth-child(1) {
     left: 0%;
     width: 30px;
     height: 30px;
 }
-.navbar .navP:first-of-type {
-    left: 50px;
+.navbar .navDiv:nth-child(2) {
+    right: 50px;
 }
-.navbar .navP:last-of-type {
-    right: 0%;
+.navbar .navDiv:nth-child(3) {
+    right: 0px;
+}
+.icon {
+    transform: translateY(3px);
 }
 .navA {
     color: white;
