@@ -12,6 +12,13 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+/* Title */
+.title {
+    text-align: center;
+    font-family: var(--ticket-heading-font);
+    font-size: 32px;
+    margin-bottom: 5px;
+}
 /* View Options */
 .filter-container {
     margin: 0 auto;
