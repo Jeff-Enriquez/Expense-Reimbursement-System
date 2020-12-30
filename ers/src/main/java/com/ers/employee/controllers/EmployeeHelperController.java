@@ -20,16 +20,70 @@ public class EmployeeHelperController {
 //				response.getWriter().write("you got a session, but you aint bobby");
 //			}
 //		}
-			String endpoint = req.getRequestURI();
-			switch(endpoint) {
-				case "/":
-					resp.getWriter().write("Hello, you're in home");
-					break;
-				default:
-					System.out.println(endpoint);
-					break;
-					
-			}
-			
+		boolean sesh = true;
+		if(sesh) {
+			isLoggedInSwitch(req, resp);
+		} else {			
+			notLoggedInSwitch(req, resp);
 		}
+		
+	}
+	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String method = req.getMethod();
+		switch(req.getRequestURI()) {
+		case "/":
+			if(method.equals("GET")) {
+				// get the page from employee controller
+			} else {
+				System.out.println("Return 405");
+			}
+			break;
+		case "/login":
+			if(method.equals("GET")) {
+				// get page from employee controller
+			} else if(method.equals("POST")) {
+				// send to employee controller
+			} else {
+				System.out.println("Return 405");
+			}
+			break;
+		case "/create":
+			if(method.equals("GET")) {
+				// get page from employee controller
+			} else if(method.equals("POST")) {
+				// send to employee controller
+			} else {
+				System.out.println("Return 405");
+			}
+			break;
+		default:
+			// redirect to home
+			break;	
+		}
+	}
+	private static void notLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String method = req.getMethod();
+		switch(req.getRequestURI()) {
+		case "/login":
+			if(method.equals("GET")) {
+				// get page from employee controller
+			} else if(method.equals("POST")) {
+				// send to employee controller
+			} else {
+				System.out.println("Return 405");
+			}
+			break;
+		case "/create":
+			if(method.equals("GET")) {
+				// get page from employee controller
+			} else if(method.equals("POST")) {
+				// send to employee controller
+			} else {
+				System.out.println("Return 405");
+			}
+			break;
+		default:
+			// redirect to home
+		}
+	}
 }
