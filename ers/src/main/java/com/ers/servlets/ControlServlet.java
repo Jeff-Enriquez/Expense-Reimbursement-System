@@ -13,7 +13,21 @@ public class ControlServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		EmployeeHelperController.process(req, resp);
+		String endpoint = req.getRequestURI();
+		/*
+		 * path1 will be the first part of the path.
+		 * Example: if uri is /manager/login then path == /manager
+		 */
+		String manager = "";
+		String[] uris = endpoint.split("/");
+		if(endpoint.length() > 1) {
+			manager = uris[1];
+		}
+		if(manager.equals("manager")) {
+			System.out.println("Send to ManagerHelperController");
+		} else {
+			EmployeeHelperController.process(req, resp);
+		}
 	}
 
 	@Override
