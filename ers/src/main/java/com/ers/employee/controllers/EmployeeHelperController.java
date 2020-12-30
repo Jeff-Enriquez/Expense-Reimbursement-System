@@ -30,26 +30,12 @@ public class EmployeeHelperController {
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String method = req.getMethod();
-		System.out.println("in employee logged in switch");
-		System.out.println("Method: " + method);
-		System.out.println("Request: " + req.getRequestURI());
 		switch(req.getRequestURI()) {
 		case "/employee":
-			if(method.equals("GET")) {
-				System.out.println("going to getHOME");
-				EmployeeController.getHome(req, resp);
-			} else {
-				resp.setStatus(405);
-			}
+			EmployeeController.home(req, resp);
 			break;
 		case "/employee/login":
-			if(method.equals("GET")) {
-				// get page from employee controller
-			} else if(method.equals("POST")) {
-				// send to employee controller
-			} else {
-				resp.setStatus(405);
-			}
+			EmployeeController.login(req, resp);
 			break;
 		case "employee/create":
 			if(method.equals("GET")) {

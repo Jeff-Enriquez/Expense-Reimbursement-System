@@ -18,16 +18,18 @@ public class ControlServlet extends HttpServlet {
 		 * manager will be the first part of the path.
 		 * Example: if the uri is /[first]/[second] then manager == [first]
 		 */
-		String manager = "";
+		String uri1 = "";
 		String[] uris = endpoint.split("/");
 		if(endpoint.length() > 1) {
-			manager = uris[1];
+			uri1 = uris[1];
 		}
-		if(manager.equals("manager")) {
+		if(uri1.equals("manager")) {
 			System.out.println("Send to ManagerHelperController");
-		} else {
+		} else if(uri1.equals("employee")) {
 			System.out.println("Sending to EmployeeHelperController");
 			EmployeeHelperController.process(req, resp);
+		} else {
+			resp.setStatus(404);
 		}
 	}
 
