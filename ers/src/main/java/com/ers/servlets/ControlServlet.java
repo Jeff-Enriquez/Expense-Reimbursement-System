@@ -26,6 +26,7 @@ public class ControlServlet extends HttpServlet {
 		if(manager.equals("manager")) {
 			System.out.println("Send to ManagerHelperController");
 		} else {
+			System.out.println("Sending to EmployeeHelperController");
 			EmployeeHelperController.process(req, resp);
 		}
 	}

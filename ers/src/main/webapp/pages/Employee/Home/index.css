@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&display=swap');
+/* Variables */
+:root {
+    --ticket-background-color: rgba(249, 249, 249, 0.1);
+    --ticket-shadow-color: rgba(128, 128, 128, 0.1);
+    --ticket-heading-color: gray;
+    --ticket-heading-font: 'Poppins', sans-serif;
+    --ticket-details-font: 'Roboto Mono', monospace;
+  }
+/* Page Format */
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Title */
+.title {
+    text-align: center;
+    font-family: var(--ticket-heading-font);
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+/* View Options */
+.filter-container {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 0;
+}
+.filter-status {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 0;
+}
+.filter-container button {
+    cursor: pointer;
+    font-family: var(--ticket-heading-font);
+    font-size: 18px;
+    padding: 2px 12px;
+    border-radius: 12px;
+    outline: none;
+    margin: 0 5px;
+}
+.selected {
+    color: green;
+    border-color: green;
+    background-color: rgb(245, 255, 244);
+}
+.not-selected {
+    background-color: inherit;
+    color: gray;
+}
+/* Tickets Container */
+.tickets-container {
+    margin: 0 auto;
+    max-width: 800px;
+}
+/* Ticket Card */
+.ticket-card {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: var(--ticket-background-color);
+    border-radius: 12px;
+    box-shadow: 0px 4px 5px var(--ticket-shadow-color), 
+        0px 3px 14px  var(--ticket-shadow-color), 
+        0px 8px 10px  var(--ticket-shadow-color);
+}
+.small-heading {
+    position: relative;
+    width: 100%;
+    height: 15px;
+}
+.ticket-type, .ticket-status {
+    position: absolute;
+    top: 0%;
+    margin: 0;
+    padding: 6px 12px;
+    font-family: var(--ticket-heading-font);
+    font-size: 10px;
+}
+.ticket-type {
+    color: orange;
+    left: 0%;
+}
+.ticket-status {
+    right: 0%;
+}
+.ticket-information {
+    margin: 10px;
+}
+.ticket-heading, .ticket-details {
+    display: grid;
+    grid-template-columns: 15% 20% 30% auto;
+    grid-template-rows: auto;
+}
+.ticket-heading p, .ticket-details p {
+    margin: 0;
+}
+.ticket-heading p {
+    font-family: var(--ticket-heading-font);
+    font-size: 12px;
+    color: var(--ticket-heading-color);
+}
+.ticket-details p {
+    font-family: var(--ticket-details-font);
+    font-size: 14px;
+}
+.description-container {
+    padding: 10px 5px 10px 5px;
+}
+.description-container p {
+    margin: 0;
+}
+.description-container p:nth-child(1) {
+    font-family: var(--ticket-heading-font);
+    font-size: 12px;
+    color: var(--ticket-heading-color);
+}
+.description-container p:nth-child(2) {
+    font-family: var(--ticket-details-font);
+    font-size: 10px;
+}
+.approved {
+    color: rgb(0, 141, 0);
+}
+.pending {
+    color: red;
+}
