@@ -15,8 +15,8 @@ public class ControlServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String endpoint = req.getRequestURI();
 		/*
-		 * path1 will be the first part of the path.
-		 * Example: if uri is /manager/login then path == /manager
+		 * manager will be the first part of the path.
+		 * Example: if the uri is /[first]/[second] then manager == [first]
 		 */
 		String manager = "";
 		String[] uris = endpoint.split("/");
