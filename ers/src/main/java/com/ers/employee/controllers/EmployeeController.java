@@ -24,7 +24,8 @@ public class EmployeeController {
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Login/index.html");
 			redis.forward(req, resp);
 		} else if(method.equals("POST")) {
-			
+			System.out.println("Hit POST employee login");
+			resp.sendRedirect("/employee");
 		} else {
 			resp.setStatus(405);
 		}

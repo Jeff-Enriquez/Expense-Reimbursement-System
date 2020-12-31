@@ -29,7 +29,6 @@ public class EmployeeHelperController {
 		
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String method = req.getMethod();
 		switch(req.getRequestURI()) {
 		case "/employee":
 			EmployeeController.home(req, resp);
@@ -38,43 +37,24 @@ public class EmployeeHelperController {
 			EmployeeController.login(req, resp);
 			break;
 		case "employee/create":
-			if(method.equals("GET")) {
-				// get page from employee controller
-			} else if(method.equals("POST")) {
-				// send to employee controller
-			} else {
-				resp.setStatus(405);
-			}
+			
 			break;
 		default:
-			System.out.println("Default was hit");
-			// redirect to home
+			resp.setStatus(404);
 			break;	
 		}
 	}
 	private static void notLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String method = req.getMethod();
+		System.out.println(req.getRequestURI());
 		switch(req.getRequestURI()) {
-		case "/login":
-			if(method.equals("GET")) {
-				// get page from employee controller
-			} else if(method.equals("POST")) {
-				// send to employee controller
-			} else {
-				resp.setStatus(405);
-			}
-			break;
-		case "/create":
-			if(method.equals("GET")) {
-				// get page from employee controller
-			} else if(method.equals("POST")) {
-				// send to employee controller
-			} else {
-				resp.setStatus(405);
-			}
-			break;
-		default:
-			// redirect to home
+			case "/employee/login":
+				EmployeeController.login(req, resp);
+				break;
+			case "/employee/create":
+				
+				break;
+			default:
+				resp.sendRedirect("/employee/login");
 		}
 	}
 }

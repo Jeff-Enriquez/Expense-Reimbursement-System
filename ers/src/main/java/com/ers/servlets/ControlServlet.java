@@ -14,6 +14,7 @@ public class ControlServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String endpoint = req.getRequestURI();
+		System.out.println(endpoint);
 		/*
 		 * manager will be the first part of the path.
 		 * Example: if the uri is /[first]/[second] then manager == [first]
@@ -35,17 +36,17 @@ public class ControlServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		doGet(req, resp);
 	}
 
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		doGet(req, resp);
 	}
 
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		doGet(req, resp);
 	}
 
 }
