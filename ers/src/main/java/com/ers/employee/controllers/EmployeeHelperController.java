@@ -37,7 +37,6 @@ public class EmployeeHelperController {
 		}
 	}
 	private static void notLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println(req.getRequestURI());
 		switch(req.getRequestURI()) {
 			case "/employee/login":
 				EmployeeController.login(req, resp);

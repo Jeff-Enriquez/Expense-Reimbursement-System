@@ -13,10 +13,7 @@ public class ControlServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println(System.getenv("DB_ERS"));
-		System.out.println(System.getenv("DB_USERNAME"));
 		String endpoint = req.getRequestURI();
-		System.out.println(endpoint);
 		/*
 		 * manager will be the first part of the path.
 		 * Example: if the uri is /[first]/[second] then manager == [first]
@@ -27,9 +24,7 @@ public class ControlServlet extends HttpServlet {
 			uri1 = uris[1];
 		}
 		if(uri1.equals("manager")) {
-			System.out.println("Send to ManagerHelperController");
 		} else if(uri1.equals("employee")) {
-			System.out.println("Sending to EmployeeHelperController");
 			EmployeeHelperController.process(req, resp);
 		} else {
 			resp.setStatus(404);

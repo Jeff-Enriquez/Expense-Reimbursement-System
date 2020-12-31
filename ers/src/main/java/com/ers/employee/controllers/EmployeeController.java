@@ -40,7 +40,6 @@ public class EmployeeController {
 			if(employee != null) {
 				sesh.setAttribute("employee", employee);
 			}
-			System.out.println("Session: " + sesh.getAttribute("employee"));
 			resp.sendRedirect("/employee");
 		} else {
 			resp.setStatus(405);
