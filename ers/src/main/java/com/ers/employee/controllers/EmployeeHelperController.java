@@ -11,7 +11,7 @@ public class EmployeeHelperController {
 	public static void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		boolean isLoggedIn = false;
 		HttpSession sesh = req.getSession(false);
-		if(sesh != null) {
+		if(sesh != null && sesh.getAttribute("employee") != null) {
 			isLoggedIn = true;
 		}
 		if(isLoggedIn) {

@@ -13,6 +13,8 @@ public class ControlServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println(System.getenv("DB_ERS"));
+		System.out.println(System.getenv("DB_USERNAME"));
 		String endpoint = req.getRequestURI();
 		System.out.println(endpoint);
 		/*

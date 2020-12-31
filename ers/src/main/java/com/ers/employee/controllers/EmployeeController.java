@@ -8,11 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ers.doas.EmployeeDoa;
+import com.ers.models.Employee;
+
 public class EmployeeController {
 	public static void home(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {
-			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Home/index.html");
+			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Home/index.jsp");
 			redis.forward(req, resp);
 		} else {
 			resp.setStatus(405);
@@ -25,16 +28,19 @@ public class EmployeeController {
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Login/index.html");
 			redis.forward(req, resp);
 		} else if(method.equals("POST")) {
-			/*
-			 * CHANGE:
-			 * Connect this to a Database
-			 */
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
+			Employee employee = null;
+			try {				
+				employee = EmployeeDoa.selectEmployee(username, password);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			HttpSession sesh = req.getSession();
-			sesh.setAttribute("username", username);
-			sesh.setAttribute("password", password);
-			System.out.println("Hit POST employee login");
+			if(employee != null) {
+				sesh.setAttribute("employee", employee);
+			}
+			System.out.println("Session: " + sesh.getAttribute("employee"));
 			resp.sendRedirect("/employee");
 		} else {
 			resp.setStatus(405);
