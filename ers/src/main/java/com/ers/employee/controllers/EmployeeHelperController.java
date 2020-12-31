@@ -9,24 +9,16 @@ import javax.servlet.http.HttpSession;
 
 public class EmployeeHelperController {
 	public static void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		HttpSession sesh = req.getSession(false);
-//		if(sesh == null) {
-//			resp.getWriter().write("Get a session!");
-//		}else{
-//			System.out.println(sesh.getAttribute("user"));
-//			if(sesh.getAttribute("user").equals(new User("Bob","superSecurePassword"))) {
-//				resp.getWriter().write("Welcome! " + sesh.getAttribute("username"));
-//			}else {
-//				response.getWriter().write("you got a session, but you aint bobby");
-//			}
-//		}
-		boolean sesh = true;
-		if(sesh) {
+		boolean isLoggedIn = false;
+		HttpSession sesh = req.getSession(false);
+		if(sesh != null) {
+			isLoggedIn = true;
+		}
+		if(isLoggedIn) {
 			isLoggedInSwitch(req, resp);
 		} else {			
 			notLoggedInSwitch(req, resp);
 		}
-		
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {

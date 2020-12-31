@@ -6,6 +6,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class EmployeeController {
 	public static void home(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -24,6 +25,15 @@ public class EmployeeController {
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Login/index.html");
 			redis.forward(req, resp);
 		} else if(method.equals("POST")) {
+			/*
+			 * CHANGE:
+			 * Connect this to a Database
+			 */
+			String username = req.getParameter("username");
+			String password = req.getParameter("password");
+			HttpSession sesh = req.getSession();
+			sesh.setAttribute("username", username);
+			sesh.setAttribute("password", password);
 			System.out.println("Hit POST employee login");
 			resp.sendRedirect("/employee");
 		} else {
