@@ -30,8 +30,18 @@ public class ReimbursementTicket {
 				this.requestType = "";
 		}
 	}
+	public String getIsApproved() {
+		if(isApproved) {
+			return "approved";
+		} else {
+			return "pending";
+		}
+	}
 	public String getRequestType() {
 		return this.requestType;
+	}
+	public String timeSubmitted() {
+		return this.timeSubmitted.toString();
 	}
 	@Override
 	public String toString() {
