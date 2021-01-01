@@ -50,7 +50,7 @@
                 <div class="ticket-details">
                     <p>132</p>
                     <p>$987</p>
-                    <p>${ username }</p>
+                    <p>Troy Fiawoo</p>
                     <p>09/13/20 @4:39pm</p>
                 </div>
                 <div class="description-container">
@@ -84,5 +84,19 @@
             </div>
         </div>
     </div>
+    <!-- <ul>
+        <li class="pending">
+            
+        </li>
+        <li class="pending">
+
+        </li>
+        <li class="past">
+
+        </li>
+        <li class="past">
+
+        </li>
+    </ul> -->
 </body>
 </html>
