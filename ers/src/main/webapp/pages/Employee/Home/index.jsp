@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="com.ers.models.ReimbursementTicket"%>
+<%@page import="com.ers.models.Employee"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,11 +39,30 @@
         </div>
     </div>
     <div class="tickets-container">
+    
+    
+    
+    
+    <% 
+    	Employee employee = (Employee)request.getSession().getAttribute("employee");
+ 		List<ReimbursementTicket> tickets = employee.getTickets();
+	    for(ReimbursementTicket ticket : tickets)
+	    {
+	        out.print("Id: " + ticket.toString());
+	        out.print("<br/>");
+	    }
+	 
+	%>
+    
+    
+    
+    
+    
         <div class="ticket-card" data-approved>
             <div class="small-heading">
                 <p class="ticket-type">Lodging</p>
                 <p class="ticket-status approved">Approved</p>
-            </div>
+            </div> 
             <div class="ticket-information">
                 <div class="ticket-heading">
                     <p>ID:</p>
