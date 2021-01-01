@@ -51,24 +51,28 @@
 	        out.print("<div class='ticket-card' data-" + ticket.getIsApproved() + ">");
 	        out.print("<div class='small-heading'>");
 	        out.print("<p class='ticket-type'>" + ticket.getRequestType() + "</p>");
-	        out.print("<p class='ticket-status " + ticket.getIsApproved() + "'>" + "</p>");
+	        out.print("<p class='ticket-status " + ticket.getIsApproved() + "'>" + ticket.getIsApproved() + "</p>");
 	        out.print("</div>");
 	        out.print("<div class='ticket-information'>");
 	        out.print("<div class='ticket-heading'>");
 	        out.print("<p>ID:</p>");
 	        out.print("<p>Amount:</p>");
-	        out.print("<p>Name:</p>");
+	        out.print("<p></p>"); //out.print("<p>Name:</p>");
 	        out.print("<p>Submitted At:</p>");
 	        out.print("</div>");
 	        out.print("<div class='ticket-details'>");
 	        out.print("<p>" + ticket.id + "</p>");
 	        out.print("<p>" + ticket.amount + "</p>");
-	        out.print("<p>" + employee.username + "</p>");
+	        out.print("<p></p>");//out.print("<p>" + employee.username + "</p>");
 	        out.print("<p>" + ticket.timeSubmitted() + "</p>");
 	        out.print("</div>");
 	        out.print("<div class='description-container'>");
 	        out.print("<p>Description</p>");
-	        out.print("<p>" + ticket.description + "</p>");
+	        if(ticket.description != null){
+		        out.print("<p>" + ticket.description + "</p>");        	
+	        } else {
+	        	out.print("<p>No description</p>");
+	        }
 	        out.print("</div>");
 	        out.print("</div>");
 	        out.print("</div>");

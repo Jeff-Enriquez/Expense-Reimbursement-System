@@ -41,7 +41,34 @@ public class ReimbursementTicket {
 		return this.requestType;
 	}
 	public String timeSubmitted() {
-		return this.timeSubmitted.toString();
+		String[] dateAndTime = this.timeSubmitted.toString().split(" ");
+		String date = dateAndTime[0];
+		String time = dateAndTime[1];
+		return formatDate(date) + " @" + formatTime(time);
+	}
+	private String formatDate(String date) {
+		String[] yearMonthDay = date.split("-");
+		String year = yearMonthDay[0];
+		String month = yearMonthDay[1];
+		String day = yearMonthDay[2];
+		return day + "/" + month + "/" + year.substring(2);
+	}
+	private String formatTime(String time) {
+		String postfix = "am";
+		String[] hoursMinutes = time.split(":");
+		String hours = hoursMinutes[0];
+		String minutes = hoursMinutes[1];
+		Integer hr = Integer.parseInt(hours);
+		if(hr == 0) {
+			hr = 12;
+		} else if(hr >= 12) {
+			postfix = "pm";
+			if(hr > 12) {
+				hr -= 12;
+			}
+		}
+		hours = hr.toString();
+		return hours + ":" + minutes + postfix;
 	}
 	@Override
 	public String toString() {
