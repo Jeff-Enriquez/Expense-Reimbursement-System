@@ -20,4 +20,7 @@ public class Employee extends User{
 	public List<ReimbursementTicket> getTickets() {
 		return this.tickets;
 	}
+	public void addTicket(ReimbursementTicket ticket) {
+		tickets.add(ticket);
+	}
 }

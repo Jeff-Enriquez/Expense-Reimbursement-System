@@ -1,10 +1,12 @@
 package com.ers.doas;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,5 +48,29 @@ public class ReimbursementTicketDoa {
 			System.out.println(tickets.get(0).toString());
 		}
 		return tickets;
+	}
+	public static Boolean createTicket(ReimbursementTicket ticket, String username) {
+		Boolean isSuccess = false;
+		Connection conn = ConnectionFactory.getConnection();
+		String sql = null;
+		if(ticket.getDescription() != null) {
+			sql = "call add_reimbursement_ticket(?,?,?,?);";
+		} else {
+			sql = "call add_reimbursement_ticket(?,?,?);";
+		}
+		try {
+			CallableStatement callSt = conn.prepareCall(sql);
+			callSt.setString(1, username);
+			callSt.setDouble(2, ticket.getAmount());
+			callSt.setString(3, ticket.getRequestType());
+			if(ticket.getDescription() != null) {
+				callSt.setString(4, ticket.getDescription());
+			}
+			callSt.execute();
+			isSuccess = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return isSuccess;
 	}
 }

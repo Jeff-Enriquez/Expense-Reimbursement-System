@@ -30,7 +30,7 @@ public class ReimbursementTicket {
 		if(description == "") {
 			this.description = null;
 		} else {
-			this.description = description;
+			this.description = description.trim();
 		}
 	}
 	public String getDescription() {
