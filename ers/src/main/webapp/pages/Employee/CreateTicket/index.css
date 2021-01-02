@@ -1,4 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&display=swap');
+/* Variables */
+:root {
+    --ticket-background-color: rgba(249, 249, 249, 0.1);
+    --ticket-shadow-color: rgba(128, 128, 128, 0.1);
+    --ticket-heading-color: gray;
+    --ticket-heading-font: 'Poppins', sans-serif;
+    --ticket-details-font: 'Roboto Mono', monospace;
+  }
+/* Page Format */
 body {
     margin: 0;
     box-sizing: border-box;
+}
+/* Title */
+.title {
+    text-align: center;
+    font-family: var(--ticket-heading-font);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+/* Create Ticket Form */
+.create-ticket-container {
+    margin: 0 auto;
+    max-width: 300px;
+}
+.input-container {
+    margin: 0 auto 20px auto;
+}
+.input-heading {
+    display: block;
+    font-family: var(--ticket-heading-font);
+    font-size: 18px;
+    margin: 0;
+}
+.input {
+    font-family: var(--ticket-details-font);
+    font-size: 14px;
+    width: 100%;
+}
+#select {
+    width: fit-content;
+}
+.submitBtn {
+    display: block; 
+    font-family: var(--ticket-heading-font);
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    width: 100px;
 }

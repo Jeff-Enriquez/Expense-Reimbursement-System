@@ -25,5 +25,29 @@
             </a>
         </div>
     </nav>
+    <h1 class="title">Create Ticket</h1>
+    <div class="create-ticket-container">
+        <form class="form" method="POST" action="/employee/create-ticket">
+            <div class="input-container">
+                <p class="input-heading">Amount</p>
+                <input required class="input" type="number" min="1" name="amount" placeholder=""/>
+            </div>
+            <div class="input-container">
+                <label id="request-heading" class="input-heading" for="request-type">Request Type</label>
+                <select required id="select" class="input" name="request-type" id="request-type">
+                    <option value="" selected disabled>-</option>
+                    <option value="lodging">Lodging</option>
+                    <option value="travel">Travel</option>
+                    <option value="food">Food</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label class="input-heading" for="description">Description</label>
+                <textarea class="input" id="description" name="description" rows="3" placeholder="Optional"></textarea>
+            </div>
+            <input class="submitBtn" type="submit">
+        </form>
+    </div>
 </body>
 </html>

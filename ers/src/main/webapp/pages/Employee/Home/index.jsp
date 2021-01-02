@@ -38,11 +38,7 @@
             <button class="not-selected" id="pending">Pending</button>
         </div>
     </div>
-    <div class="tickets-container">
-    
-    
-    
-    
+    <div class="tickets-container"> 
     <% 
     	Employee employee = (Employee)request.getSession().getAttribute("employee");
  		List<ReimbursementTicket> tickets = employee.getTickets();
@@ -53,25 +49,27 @@
 	        out.print("<p class='ticket-type'>" + ticket.getRequestType() + "</p>");
 	        out.print("<p class='ticket-status " + ticket.getIsApproved() + "'>" + ticket.getIsApproved() + "</p>");
 	        out.print("</div>");
-	        out.print("<div class='ticket-information'>");
-	        out.print("<div class='ticket-heading'>");
-	        out.print("<p>ID:</p>");
-	        out.print("<p>Amount:</p>");
-	        out.print("<p></p>"); //out.print("<p>Name:</p>");
-	        out.print("<p>Submitted At:</p>");
+	        out.print("<div class='ticket-information-container'>");
+	        out.print("<div class='ticket'>");
+	        out.print("<div>");
+	        out.print("<p class='ticket-heading'>ID:</p>");
+	        out.print("<p class='ticket-details'>" + ticket.id + "</p>");
 	        out.print("</div>");
-	        out.print("<div class='ticket-details'>");
-	        out.print("<p>" + ticket.id + "</p>");
-	        out.print("<p>" + ticket.amount + "</p>");
-	        out.print("<p></p>");//out.print("<p>" + employee.username + "</p>");
-	        out.print("<p>" + ticket.timeSubmitted() + "</p>");
+	        out.print("<div>");
+	        out.print("<p class='ticket-heading'>Amount:</p>");
+	        out.print("<p class='ticket-details'>$" + ticket.amount + "</p>");
+	        out.print("</div>");
+	        out.print("<div>");
+	        out.print("<p class='ticket-heading'>Submitted At:</p>");
+	        out.print("<p class='ticket-details'>" + ticket.timeSubmitted() + "</p>");
+	        out.print("</div>");
 	        out.print("</div>");
 	        out.print("<div class='description-container'>");
-	        out.print("<p>Description</p>");
+	        out.print("<p class='ticket-heading'>Description</p>");
 	        if(ticket.description != null){
-		        out.print("<p>" + ticket.description + "</p>");        	
+		        out.print("<p class='ticket-details'>" + ticket.description + "</p>");        	
 	        } else {
-	        	out.print("<p>No description</p>");
+	        	out.print("<p class='ticket-details'>No description</p>");
 	        }
 	        out.print("</div>");
 	        out.print("</div>");
@@ -79,73 +77,6 @@
 	    }
 	 
 	%>
-    
-    
-    
-    
-    
-        <div class="ticket-card" data-approved>
-            <div class="small-heading">
-                <p class="ticket-type">Lodging</p>
-                <p class="ticket-status approved">Approved</p>
-            </div> 
-            <div class="ticket-information">
-                <div class="ticket-heading">
-                    <p>ID:</p>
-                    <p>Amount:</p>
-                    <p>Name:</p>
-                    <p>Submitted At:</p>
-                </div>
-                <div class="ticket-details">
-                    <p>132</p>
-                    <p>$987</p>
-                    <p>Troy Fiawoo</p>
-                    <p>09/13/20 @4:39pm</p>
-                </div>
-                <div class="description-container">
-                    <p>Description</p>
-                    <p>This is a desc for the ticket</p>
-                </div>
-            </div>
-        </div>
-        <div class="ticket-card" data-pending>
-            <div class="small-heading">
-                <p class="ticket-type">Lodging</p>
-                <p class="ticket-status pending">Pending</p>
-            </div>
-            <div class="ticket-information">
-                <div class="ticket-heading">
-                    <p>ID:</p>
-                    <p>Amount:</p>
-                    <p>Name:</p>
-                    <p>Submitted At:</p>
-                </div>
-                <div class="ticket-details">
-                    <p>296</p>
-                    <p>$1,538</p>
-                    <p>Troy Fiawoo</p>
-                    <p>10/20/20 @2:00pm</p>
-                </div>
-                <div class="description-container">
-                    <p>Description</p>
-                    <p>This is the description</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <ul>
-        <li class="pending">
-            
-        </li>
-        <li class="pending">
-
-        </li>
-        <li class="past">
-
-        </li>
-        <li class="past">
-
-        </li>
-    </ul> -->
+   </div>
 </body>
 </html>

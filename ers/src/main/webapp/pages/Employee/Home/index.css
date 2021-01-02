@@ -55,8 +55,7 @@ body {
 }
 /* Ticket Card */
 .ticket-card {
-    width: 100%;
-    margin-bottom: 10px;
+    margin: 0 10px 10px 10px;
     background-color: var(--ticket-background-color);
     border-radius: 12px;
     box-shadow: 0px 4px 5px var(--ticket-shadow-color), 
@@ -77,29 +76,40 @@ body {
     font-size: 10px;
 }
 .ticket-type {
+    text-transform: capitalize;
     color: orange;
     left: 0%;
 }
 .ticket-status {
+    text-transform: capitalize;
     right: 0%;
 }
-.ticket-information {
+.ticket-information-container {
     margin: 10px;
 }
-.ticket-heading, .ticket-details {
+.ticket {
     display: grid;
-    grid-template-columns: 15% 20% 30% auto;
+    grid-template-columns: 18% 28% auto;
     grid-template-rows: auto;
 }
-.ticket-heading p, .ticket-details p {
+.ticket {
+    margin: 15px 20px 0 20px;
+}
+.ticket div:nth-child(2), .ticket div:nth-child(3) {
+    margin: 0 auto;
+}
+.ticket-details {
+    margin: 0 20px;
+}
+.ticket p, .ticket-details p {
     margin: 0;
 }
-.ticket-heading p {
+.ticket-heading {
     font-family: var(--ticket-heading-font);
     font-size: 12px;
     color: var(--ticket-heading-color);
 }
-.ticket-details p {
+.ticket-details {
     font-family: var(--ticket-details-font);
     font-size: 14px;
 }
