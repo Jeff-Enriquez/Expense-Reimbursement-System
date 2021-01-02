@@ -25,6 +25,22 @@ public class EmployeeController {
 		}
 		
 	}
+	public static void createTicket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String method = req.getMethod();
+		if(method.equals("GET")) {
+			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/CreateTicket/index.html");
+			redis.forward(req, resp);
+		} else if(method.equals("POST")) {
+			String amount = req.getParameter("amount");
+			String requestType = req.getParameter("request-type");
+			String description = req.getParameter("description");
+			if(description == "") {
+				description = null;
+			}
+		} else {
+			resp.setStatus(405);
+		}
+	}
 	public static void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {

@@ -40,6 +40,7 @@ body {
 }
 #select {
     width: fit-content;
+    background-color: white;
 }
 .submitBtn {
     display: block; 

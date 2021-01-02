@@ -22,7 +22,7 @@
             </a>
         </div>
         <div class="navDiv">
-            <a class="navA" href="../CreateTicket/index.html">Create Ticket</a>
+            <a class="navA" href="/employee/create-ticket">Create Ticket</a>
         </div>
         <div class="navDiv">
             <a class="navA" href="">
@@ -57,7 +57,7 @@
 	        out.print("</div>");
 	        out.print("<div>");
 	        out.print("<p class='ticket-heading'>Amount:</p>");
-	        out.print("<p class='ticket-details'>$" + ticket.amount + "</p>");
+	        out.print("<p class='ticket-details'>$" + ticket.getAmount() + "</p>");
 	        out.print("</div>");
 	        out.print("<div>");
 	        out.print("<p class='ticket-heading'>Submitted At:</p>");
@@ -66,8 +66,8 @@
 	        out.print("</div>");
 	        out.print("<div class='description-container'>");
 	        out.print("<p class='ticket-heading'>Description</p>");
-	        if(ticket.description != null){
-		        out.print("<p class='ticket-details'>" + ticket.description + "</p>");        	
+	        if(ticket.getDescription() != null){
+		        out.print("<p class='ticket-details'>" + ticket.getDescription() + "</p>");        	
 	        } else {
 	        	out.print("<p class='ticket-details'>No description</p>");
 	        }

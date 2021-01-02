@@ -28,7 +28,10 @@ public class EmployeeHelperController {
 		case "/employee/login":
 			EmployeeController.login(req, resp);
 			break;
-		case "employee/create":
+		case "/employee/create-ticket":
+			EmployeeController.createTicket(req, resp);
+			break;
+		case "employee/create-employee":
 			
 			break;
 		default:
@@ -41,7 +44,7 @@ public class EmployeeHelperController {
 			case "/employee/login":
 				EmployeeController.login(req, resp);
 				break;
-			case "/employee/create":
+			case "/employee/create-employee":
 				
 				break;
 			default:

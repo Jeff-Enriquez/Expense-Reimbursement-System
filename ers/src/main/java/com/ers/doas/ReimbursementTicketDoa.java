@@ -8,6 +8,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ers.exceptions.AmountException;
+import com.ers.exceptions.RequestTypeException;
 import com.ers.models.ReimbursementTicket;
 import com.ers.util.ConnectionFactory;
 
@@ -28,7 +30,14 @@ public class ReimbursementTicketDoa {
 				String description = rs.getString("description");
 				Timestamp timeSubmitted = rs.getTimestamp("time_submitted");
 				Boolean isApproved = rs.getBoolean("is_approved");
-				tickets.add(new ReimbursementTicket(id, amount, requestType, description, timeSubmitted, isApproved));
+				try {
+					ReimbursementTicket ticket = new ReimbursementTicket(id, amount, requestType, description, timeSubmitted, isApproved);
+					tickets.add(ticket);
+				} catch (AmountException e) {
+					e.printStackTrace();
+				} catch (RequestTypeException e) {
+					e.printStackTrace();
+				}
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

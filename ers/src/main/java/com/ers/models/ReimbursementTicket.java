@@ -2,23 +2,51 @@ package com.ers.models;
 
 import java.sql.Timestamp;
 
+import com.ers.exceptions.AmountException;
+import com.ers.exceptions.RequestTypeException;
+
 public class ReimbursementTicket {
 	public Integer id;
-	public Double amount;
+	private Double amount;
 	private String requestType;
-	public String description;
+	private String description;
 	public Timestamp timeSubmitted;
 	public Boolean isApproved;
 	public ReimbursementTicket(){}
-	public ReimbursementTicket(Integer id, Double amount, String requestType, String description, Timestamp timeSubmitted, Boolean isApproved) {
+	public ReimbursementTicket(Integer id, Double amount, String requestType, String description, Timestamp timeSubmitted, Boolean isApproved) throws AmountException, RequestTypeException {
 		this.id = id;
-		this.amount = amount;
+		setAmount(amount);
 		setRequestType(requestType);
 		this.description = description;
 		this.timeSubmitted = timeSubmitted;
 		this.isApproved = isApproved;
 	}
-	public void setRequestType(String type) {
+	public ReimbursementTicket(Double amount, String requestType, String description) throws AmountException, RequestTypeException {
+		setAmount(amount);
+		setRequestType(requestType);
+		this.description = description;
+	}
+	public void setDescription(String description) {
+		if(description == "") {
+			this.description = null;
+		} else {
+			this.description = description;
+		}
+	}
+	public String getDescription() {
+		return this.description;
+	}
+	public void setAmount(Double amount) throws AmountException {
+		if(amount > 0) {
+			this.amount = amount;
+		} else {
+			throw new AmountException("ReimbursementTicket: cannot set a negative amount");
+		}
+	}
+	public Double getAmount() {
+		return this.amount;
+	}
+	public void setRequestType(String type) throws RequestTypeException {
 		switch(type) {
 			case "lodging":
 			case "travel":
@@ -27,7 +55,7 @@ public class ReimbursementTicket {
 				this.requestType = type;
 				break;
 			default: 
-				this.requestType = "";
+				throw new RequestTypeException();
 		}
 	}
 	public String getIsApproved() {
