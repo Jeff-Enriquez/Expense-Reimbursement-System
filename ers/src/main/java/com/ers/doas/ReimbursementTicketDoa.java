@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +42,6 @@ public class ReimbursementTicketDoa {
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
-		}
-		if(tickets.size() > 0) {
-			System.out.println(tickets.get(0).toString());
 		}
 		return tickets;
 	}
