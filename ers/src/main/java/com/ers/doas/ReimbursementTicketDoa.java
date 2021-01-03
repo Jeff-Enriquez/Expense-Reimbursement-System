@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,41 @@ public class ReimbursementTicketDoa {
 				Boolean isApproved = rs.getBoolean("is_approved");
 				try {
 					ReimbursementTicket ticket = new ReimbursementTicket(id, amount, requestType, description, timeSubmitted, isApproved);
+					tickets.add(ticket);
+				} catch (AmountException e) {
+					e.printStackTrace();
+				} catch (RequestTypeException e) {
+					e.printStackTrace();
+				}
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return tickets;
+	}
+	public static List<ReimbursementTicket> getAllPending(){
+		return getTickets(false);
+	}
+	public static List<ReimbursementTicket> getAllApproved(){
+		return getTickets(true);
+	}
+	private static List<ReimbursementTicket> getTickets(boolean isApproved){
+		List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
+		Connection conn = ConnectionFactory.getConnection();
+		String sql = "select * from reimbursement_ticket where "
+				+ "is_approved = " + isApproved + ";";
+		try {
+			Statement statement = conn.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				Integer id = rs.getInt("id");
+				Double amount = rs.getDouble("amount");
+				String requestType = rs.getString("request_type");
+				String description = rs.getString("description");
+				Timestamp timeSubmitted = rs.getTimestamp("time_submitted");
+				Boolean approved = rs.getBoolean("is_approved");
+				try {
+					ReimbursementTicket ticket = new ReimbursementTicket(id, amount, requestType, description, timeSubmitted, approved);
 					tickets.add(ticket);
 				} catch (AmountException e) {
 					e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.ers.employee.controllers;
+package com.ers.controllers;
 
 import java.io.IOException;
 
@@ -7,13 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
-
-public class EmployeeHelperController {
+public class ManagerHelperController {
 	public static void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		boolean isLoggedIn = false;
 		HttpSession sesh = req.getSession(false);
-		if(sesh != null && sesh.getAttribute("employee") != null) {
+		if(sesh != null && sesh.getAttribute("manager") != null) {
 			isLoggedIn = true;
 		}
 		if(isLoggedIn) {
@@ -24,33 +22,29 @@ public class EmployeeHelperController {
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
-		case "/employee":
-			EmployeeController.home(req, resp);
-			break;
-		case "/employee/login":
-			EmployeeController.login(req, resp);
-			break;
-		case "/employee/create-ticket":
-			EmployeeController.createTicket(req, resp);
-			break;
-		case "employee/create-employee":
-			
-			break;
-		default:
-			resp.setStatus(404);
-			break;	
+			case "/manager/pending-tickets":
+				ManagerController.pendingTickets(req, resp);
+				break;
+			case "/manager/approved-tickets":
+				break;
+			case "/manager/login":
+				ManagerController.login(req, resp);
+				break;
+			default:
+				resp.setStatus(404);
+				break;	
 		}
 	}
 	private static void notLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
-			case "/employee/login":
-				EmployeeController.login(req, resp);
+			case "/manager/login":
+				ManagerController.login(req, resp);
 				break;
-			case "/employee/create-employee":
+			case "/manager/create-manager":
 				
 				break;
 			default:
-				resp.sendRedirect("/employee/login");
+				resp.sendRedirect("/manager/login");
 		}
 	}
 }

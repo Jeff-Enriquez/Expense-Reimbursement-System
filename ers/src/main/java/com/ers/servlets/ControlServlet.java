@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ers.employee.controllers.EmployeeHelperController;
+import com.ers.controllers.EmployeeHelperController;
+import com.ers.controllers.ManagerHelperController;
 
 public class ControlServlet extends HttpServlet {
 
@@ -24,6 +25,7 @@ public class ControlServlet extends HttpServlet {
 			uri1 = uris[1];
 		}
 		if(uri1.equals("manager")) {
+			ManagerHelperController.process(req, resp);
 		} else if(uri1.equals("employee")) {
 			EmployeeHelperController.process(req, resp);
 		} else {

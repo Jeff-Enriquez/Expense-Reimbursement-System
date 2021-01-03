@@ -1,4 +1,4 @@
-package com.ers.employee.controllers;
+package com.ers.controllers;
 
 import java.io.IOException;
 
