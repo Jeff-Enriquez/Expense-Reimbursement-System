@@ -5,6 +5,8 @@ let tickets = null
 
 tickets = null
 
+getPendingTickets()
+
 pendingTitle.addEventListener("click", () => {
     getPendingTickets()
     pendingTitle.className = "title selected"
@@ -18,13 +20,12 @@ pastTitle.addEventListener("click", () => {
 })
 
 function getPendingTickets() {
-	console.log("get pending tickets");
     const HTTP = new XMLHttpRequest()
     HTTP.onreadystatechange = e => {
         if(HTTP.readyState == 4 && HTTP.status == 200){
             tickets = JSON.parse(HTTP.response)
             console.log("tickets");
-            renderTickets()
+            renderPendingTickets()
         }
     }
     HTTP.open("GET", "/manager/get-pending-tickets")
@@ -36,23 +37,23 @@ function getPastTickets() {
     HTTP.onreadystatechange = e => {
         if(HTTP.readyState == 4 && HTTP.status == 200){
             tickets = JSON.parse(HTTP.response)
-            renderTickets()
+            renderPastTickets()
         }
     }
     HTTP.open("GET", "/manager/get-past-tickets")
     HTTP.send()
 }
 
-function renderTickets(){
+function renderPendingTickets(){
     ticketsContainer.innerHTML = "";
     for(let ticket of tickets){
         let newDiv = document.createElement("div")
         newDiv.className = "ticket-card"
         newDiv.setAttribute(`data-${ticket.isApproved}`, "")
         newDiv.innerHTML = `
-        <div class="small-heading">
+        	<div class="small-heading">
                 <p class="ticket-type">${ticket.requestType}</p>
-                <p class="username">Employee: </p>
+                <p class="username">Employee: ${ticket.employee}</p>
                 <p class="ticket-status ${ticket.isApproved}">${ticket.isApproved}</p>
             </div>
             <div class="ticket-information-container">
@@ -77,6 +78,42 @@ function renderTickets(){
                 <div class="buttons-container">
                     <button onclick="denyTicket(${ticket.id})" class="deny">Deny</button>
                     <button onclick="approveTicket(${ticket.id})" class="approve">Approve</button>
+                </div>
+            </div>
+        `
+        ticketsContainer.appendChild(newDiv)
+    }
+}
+function renderPastTickets(){
+    ticketsContainer.innerHTML = "";
+    for(let ticket of tickets){
+        let newDiv = document.createElement("div")
+        newDiv.className = "ticket-card"
+        newDiv.setAttribute(`data-${ticket.isApproved}`, "")
+        newDiv.innerHTML = `
+        	<div class="small-heading">
+                <p class="ticket-type">${ticket.requestType}</p>
+                <p class="username">Employee: ${ticket.employee}</p>
+                <p class="ticket-status ${ticket.isApproved}">${ticket.isApproved}</p>
+            </div>
+            <div class="ticket-information-container">
+                <div class="ticket">
+                    <div>
+                        <p class="ticket-heading">ID:</p>
+                        <p class="ticket-details">${ticket.id}</p>
+                    </div>
+                    <div>
+                        <p class="ticket-heading">Amount:</p>
+                        <p class="ticket-details">$${ticket.amount}</p>
+                    </div>
+                    <div>
+                        <p class="ticket-heading">Submitted At:</p>
+                        <p class="ticket-details">${convertTime(ticket.timeSubmitted)}</p>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <p class="ticket-heading">Description</p>
+                    <p class="ticket-details">${ticket.description}</p>
                 </div>
             </div>
         `

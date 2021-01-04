@@ -12,7 +12,17 @@ public class ReimbursementTicket {
 	private String description;
 	public Timestamp timeSubmitted;
 	public Boolean isApproved;
+	public String employee;
 	public ReimbursementTicket(){}
+	public ReimbursementTicket(Integer id, String employee, Double amount, String requestType, String description, Timestamp timeSubmitted, Boolean isApproved) throws AmountException, RequestTypeException {
+		this.id = id;
+		this.employee = employee;
+		setAmount(amount);
+		setRequestType(requestType);
+		this.description = description;
+		this.timeSubmitted = timeSubmitted;
+		this.isApproved = isApproved;
+	}
 	public ReimbursementTicket(Integer id, Double amount, String requestType, String description, Timestamp timeSubmitted, Boolean isApproved) throws AmountException, RequestTypeException {
 		this.id = id;
 		setAmount(amount);

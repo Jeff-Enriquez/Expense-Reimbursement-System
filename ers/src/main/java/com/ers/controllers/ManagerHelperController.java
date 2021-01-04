@@ -23,13 +23,14 @@ public class ManagerHelperController {
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
+			case "/manager":
+				ManagerController.home(req, resp);
+				break;
 			case "/manager/get-pending-tickets":
 				ManagerController.getPendingTickets(req, resp);
 				break;
-			case "/manager/pending-tickets":
-				ManagerController.pendingTickets(req, resp);
-				break;
-			case "/manager/approved-tickets":
+			case "/manager/get-past-tickets":
+				ManagerController.getApprovedTickets(req, resp);
 				break;
 			case "/manager/login":
 				ManagerController.login(req, resp);

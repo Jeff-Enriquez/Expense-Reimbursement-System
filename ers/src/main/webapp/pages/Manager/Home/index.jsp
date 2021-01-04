@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERS - Home</title>
     <link rel="stylesheet" type="text/css" href="/pages/nav.css">
-    <link rel="stylesheet" type="text/css" href="/pages/Manager/PendingTickets/index.css">
+    <link rel="stylesheet" type="text/css" href="/pages/Manager/Home/index.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <script defer src="/pages/Manager/PendingTickets/index.js"></script>
+    <script defer src="/pages/Manager/Home/index.js"></script>
 </head>
 <body>
     <nav class='navbar'>

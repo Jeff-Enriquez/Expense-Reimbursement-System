@@ -62,3 +62,27 @@
 2021-01-03 19:09:38 INFO  ManagerController:43 - Manager (pendingTickets): admin has requested to view pending tickets page.
 2021-01-03 19:13:09 INFO  ManagerController:43 - Manager (pendingTickets): admin has requested to view pending tickets page.
 2021-01-03 19:13:26 INFO  ManagerController:43 - Manager (pendingTickets): admin has requested to view pending tickets page.
+2021-01-03 20:00:50 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-03 20:00:53 INFO  ManagerController:113 - User (login): the MANAGER admin has logged in.
+2021-01-03 20:00:53 INFO  ManagerController:43 - Manager (pendingTickets): admin has requested to view pending tickets page.
+2021-01-03 20:10:25 INFO  ManagerController:99 - User (login): User has requested to view login page.
+2021-01-03 20:10:28 INFO  ManagerController:99 - User (login): User has requested to view login page.
+2021-01-03 20:10:32 INFO  ManagerController:112 - User (login): the MANAGER admin has logged in.
+2021-01-03 20:11:07 INFO  ManagerController:99 - User (login): User has requested to view login page.
+2021-01-03 20:11:11 INFO  ManagerController:112 - User (login): the MANAGER admin has logged in.
+2021-01-03 20:11:12 INFO  ManagerController:42 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:15:03 INFO  ManagerController:62 - User (login): User has requested to view login page.
+2021-01-03 20:15:09 INFO  ManagerController:62 - User (login): User has requested to view login page.
+2021-01-03 20:15:12 INFO  ManagerController:75 - User (login): the MANAGER admin has logged in.
+2021-01-03 20:15:12 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:15:54 INFO  ManagerController:62 - User (login): User has requested to view login page.
+2021-01-03 20:15:54 INFO  ManagerController:62 - User (login): User has requested to view login page.
+2021-01-03 20:15:57 INFO  ManagerController:75 - User (login): the MANAGER admin has logged in.
+2021-01-03 20:15:57 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:16:15 INFO  ManagerController:62 - User (login): User has requested to view login page.
+2021-01-03 20:16:18 INFO  ManagerController:75 - User (login): the MANAGER admin has logged in.
+2021-01-03 20:16:18 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:20:29 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:20:34 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:21:35 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:21:58 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.

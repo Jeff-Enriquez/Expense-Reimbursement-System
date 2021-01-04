@@ -62,13 +62,14 @@ public class ReimbursementTicketDoa {
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next()) {
 				Integer id = rs.getInt("id");
+				String employee = rs.getString("employee");
 				Double amount = rs.getDouble("amount");
 				String requestType = rs.getString("request_type");
 				String description = rs.getString("description");
 				Timestamp timeSubmitted = rs.getTimestamp("time_submitted");
 				Boolean approved = rs.getBoolean("is_approved");
 				try {
-					ReimbursementTicket ticket = new ReimbursementTicket(id, amount, requestType, description, timeSubmitted, approved);
+					ReimbursementTicket ticket = new ReimbursementTicket(id, employee, amount, requestType, description, timeSubmitted, approved);
 					tickets.add(ticket);
 				} catch (AmountException e) {
 					e.printStackTrace();
