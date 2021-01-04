@@ -24,7 +24,6 @@ function getPendingTickets() {
     HTTP.onreadystatechange = e => {
         if(HTTP.readyState == 4 && HTTP.status == 200){
             tickets = JSON.parse(HTTP.response)
-            console.log("tickets");
             renderPendingTickets()
         }
     }
@@ -76,8 +75,8 @@ function renderPendingTickets(){
                     <p class="ticket-details">${ticket.description}</p>
                 </div>
                 <div class="buttons-container">
-                    <button onclick="denyTicket(${ticket.id})" class="deny">Deny</button>
-                    <button onclick="approveTicket(${ticket.id})" class="approve">Approve</button>
+                    <button onclick="denyTicket(${ticket.id}, '${ticket.employee}')" class="deny">Deny</button>
+                    <button onclick="approveTicket(${ticket.id}, '${ticket.employee}')" class="approve">Approve</button>
                 </div>
             </div>
         `
@@ -120,11 +119,25 @@ function renderPastTickets(){
         ticketsContainer.appendChild(newDiv)
     }
 }
-function denyTicket(id){
-    console.log("deny: " + id)
+function denyTicket(id, employee){
+    const HTTP = new XMLHttpRequest()
+    HTTP.onreadystatechange = e => {
+        if(HTTP.readyState == XMLHttpRequest.DONE && HTTP.status == 200){
+            getPendingTickets()
+        }
+    }
+    HTTP.open("PUT", "/manager/deny-ticket")
+    HTTP.send(`{ "id":${id}, "employee":"${employee}" }`)
 }
-function approveTicket(id){
-    console.log("approve: " + id)
+function approveTicket(id, employee){
+    const HTTP = new XMLHttpRequest()
+    HTTP.onreadystatechange = e => {
+        if(HTTP.readyState == XMLHttpRequest.DONE && HTTP.status == 200){
+            getPendingTickets()
+        }
+    }
+    HTTP.open("PUT", "/manager/approve-ticket")
+    HTTP.send(`{ "id":${id}, "employee":"${employee}" }`)
 }
 
 function convertTime(timeStamp){

@@ -32,6 +32,12 @@ public class ManagerHelperController {
 			case "/manager/get-past-tickets":
 				ManagerController.getApprovedTickets(req, resp);
 				break;
+			case "/manager/deny-ticket":
+				ManagerController.denyTicket(req, resp);
+				break;
+			case "/manager/approve-ticket":
+				ManagerController.approveTicket(req, resp);
+				break;
 			case "/manager/login":
 				ManagerController.login(req, resp);
 				break;

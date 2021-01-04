@@ -86,3 +86,52 @@
 2021-01-03 20:20:34 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
 2021-01-03 20:21:35 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
 2021-01-03 20:21:58 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 20:23:27 INFO  ManagerController:62 - User (login): User has requested to view login page.
+2021-01-03 20:23:43 INFO  EmployeeController:90 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-03 20:23:43 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 20:23:56 INFO  EmployeeController:44 - Employee (createTicket): jeff has requested to view create ticket page.
+2021-01-03 20:24:23 INFO  ManagerController:75 - User (login): the MANAGER admin has logged in.
+2021-01-03 20:24:23 INFO  ManagerController:51 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 21:09:51 INFO  ManagerController:69 - User (login): User has requested to view login page.
+2021-01-03 21:09:54 INFO  ManagerController:69 - User (login): User has requested to view login page.
+2021-01-03 21:09:57 INFO  ManagerController:82 - User (login): the MANAGER admin has logged in.
+2021-01-03 21:09:57 INFO  ManagerController:58 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 21:43:09 INFO  ManagerController:69 - User (login): User has requested to view login page.
+2021-01-03 21:43:13 INFO  ManagerController:82 - User (login): the MANAGER admin has logged in.
+2021-01-03 21:43:13 INFO  ManagerController:58 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 21:47:11 INFO  ManagerController:70 - User (login): User has requested to view login page.
+2021-01-03 21:47:16 INFO  ManagerController:83 - User (login): the MANAGER admin has logged in.
+2021-01-03 21:47:16 INFO  ManagerController:59 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 21:47:44 INFO  ManagerController:70 - User (login): User has requested to view login page.
+2021-01-03 21:47:47 INFO  ManagerController:83 - User (login): the MANAGER admin has logged in.
+2021-01-03 21:47:47 INFO  ManagerController:59 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 21:48:25 INFO  ManagerController:59 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 21:53:36 INFO  ManagerController:70 - User (login): User has requested to view login page.
+2021-01-03 21:53:39 INFO  ManagerController:83 - User (login): the MANAGER admin has logged in.
+2021-01-03 21:53:39 INFO  ManagerController:59 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 21:55:36 INFO  ManagerController:72 - User (login): User has requested to view login page.
+2021-01-03 21:55:40 INFO  ManagerController:85 - User (login): the MANAGER admin has logged in.
+2021-01-03 21:55:40 INFO  ManagerController:61 - Manager (pendingTickets): admin has requested to view home page.
+2021-01-03 22:05:05 INFO  ManagerController:96 - User (login): User has requested to view login page.
+2021-01-03 22:05:09 INFO  ManagerController:109 - User (login): the MANAGER admin has logged in.
+2021-01-03 22:05:09 INFO  ManagerController:85 - Manager (home): admin has requested to view home page.
+2021-01-03 22:05:52 INFO  ManagerController:85 - Manager (home): admin has requested to view home page.
+2021-01-03 22:07:01 INFO  ManagerController:85 - Manager (home): admin has requested to view home page.
+2021-01-03 22:07:06 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 22:07:08 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-03 22:07:08 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:07:36 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:10:02 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:11:16 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:11:57 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:13:50 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:16:08 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:16:51 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:17:56 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:19:22 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:19:36 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:19:47 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:19:59 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:21:25 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:21:27 INFO  ManagerController:46 - Manger (denyTicket): admin denied the ticket: id-8 employee-jeff
+2021-01-03 22:21:57 INFO  ManagerController:32 - Manger (approveTicket): admin approved the ticket: id-7 employee-jeff

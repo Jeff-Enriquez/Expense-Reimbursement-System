@@ -106,4 +106,26 @@ public class ReimbursementTicketDoa {
 		}
 		return isSuccess;
 	}
+	public static void approveTicket(Integer id) {
+		Connection conn = ConnectionFactory.getConnection();
+		String sql = "update reimbursement_ticket set is_approved = true where id = ?;";
+		try {
+			PreparedStatement ps = conn.prepareCall(sql);
+			ps.setInt(1, id);
+			ps.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void denyTicket(Integer id) {
+		Connection conn = ConnectionFactory.getConnection();
+		String sql = "delete from reimbursement_ticket where id = ? && is_approved = false;";
+		try {
+			PreparedStatement ps = conn.prepareCall(sql);
+			ps.setInt(1, id);
+			ps.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

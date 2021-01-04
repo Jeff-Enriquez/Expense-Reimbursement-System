@@ -22,6 +22,33 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ManagerController {
 	private static Logger logger = LogManager.getLogger(ManagerController.class);
 
+	public static void approveTicket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String method = req.getMethod();
+		Manager manager = (Manager) req.getSession().getAttribute("manager");
+		if(req.getMethod().equals("PUT")) {			
+			ObjectMapper om = new ObjectMapper();
+			ReimbursementTicket ticket = om.readValue(req.getReader(), com.ers.models.ReimbursementTicket.class);
+			ReimbursementTicketDoa.approveTicket(ticket.id);
+			logger.info("Manger (approveTicket): " + manager.username + " approved the ticket: id-" + ticket.id + " employee-" + ticket.employee);
+		} else {
+			logger.warn("Manager (approveTicket) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
+			resp.setStatus(405);
+		}
+	}
+	public static void denyTicket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String method = req.getMethod();
+		Manager manager = (Manager) req.getSession().getAttribute("manager");
+		if(req.getMethod().equals("PUT")) {			
+			ObjectMapper om = new ObjectMapper();
+			ReimbursementTicket ticket = om.readValue(req.getReader(), com.ers.models.ReimbursementTicket.class);
+			System.out.println("TICKET: " + ticket + ticket.employee);
+			ReimbursementTicketDoa.denyTicket(ticket.id);
+			logger.info("Manger (denyTicket): " + manager.username + " denied the ticket: id-" + ticket.id + " employee-" + ticket.employee);
+		} else {
+			logger.warn("Manager (denyTicket) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
+			resp.setStatus(405);
+		}
+	}
 	public static void getPendingTickets(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {
@@ -30,6 +57,10 @@ public class ManagerController {
 			resp.setContentType("application/json");
 			ObjectMapper om = new ObjectMapper();
 			resp.getWriter().write(om.writeValueAsString(tickets));
+		} else {
+			Manager manager = (Manager) req.getSession().getAttribute("manager");
+			logger.warn("Manager (pendingTickets) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
+			resp.setStatus(405);
 		}
 	}
 	public static void getApprovedTickets(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -40,6 +71,10 @@ public class ManagerController {
 			resp.setContentType("application/json");
 			ObjectMapper om = new ObjectMapper();
 			resp.getWriter().write(om.writeValueAsString(tickets));
+		} else {
+			Manager manager = (Manager) req.getSession().getAttribute("manager");
+			logger.warn("Manager (getApprovedTickets) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
+			resp.setStatus(405);
 		}
 	}
 	public static void home(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -48,9 +83,9 @@ public class ManagerController {
 		if(method.equals("GET")) {
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Manager/Home/index.jsp");
 			redis.forward(req, resp);
-			logger.info("Manager (pendingTickets): " + manager.username + " has requested to view home page.");
+			logger.info("Manager (home): " + manager.username + " has requested to view home page.");
 		} else {
-			logger.warn("Manager (pendingTickets) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
+			logger.warn("Manager (home) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
 		}
 	}
