@@ -135,3 +135,26 @@
 2021-01-03 22:21:25 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
 2021-01-03 22:21:27 INFO  ManagerController:46 - Manger (denyTicket): admin denied the ticket: id-8 employee-jeff
 2021-01-03 22:21:57 INFO  ManagerController:32 - Manger (approveTicket): admin approved the ticket: id-7 employee-jeff
+2021-01-03 22:27:27 INFO  EmployeeController:90 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-03 22:27:27 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 22:28:18 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 22:28:22 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-03 22:28:22 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:29:32 INFO  EmployeeController:76 - User (login): User has requested to view login page.
+2021-01-03 22:29:35 INFO  EmployeeController:90 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-03 22:29:35 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 22:30:47 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 22:30:50 INFO  EmployeeController:76 - User (login): User has requested to view login page.
+2021-01-03 22:30:53 INFO  EmployeeController:90 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-03 22:30:53 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 22:31:58 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 22:31:59 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 22:32:01 INFO  EmployeeController:76 - User (login): User has requested to view login page.
+2021-01-03 22:32:04 INFO  EmployeeController:90 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-03 22:32:05 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 22:32:14 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 22:32:18 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-03 22:32:18 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:35:10 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 22:35:14 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-03 22:35:14 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.

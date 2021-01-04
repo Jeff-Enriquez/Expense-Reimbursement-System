@@ -143,50 +143,67 @@ function approveTicket(id, employee){
 function convertTime(timeStamp){
   let time = new Date(timeStamp)
   let times = time.toString().split(" ")
-  let month = times[1]
+  let month = convertMonth(times[1])
   let day = times[2]
   let year = times[3].substring(2)
-  let clock = times[4].substring(0,5)
-  switch(month){
-    case "Jan":
-      month = "01"
-      break
-    case "Feb":
-      month = "02"
-      break
-    case "Mar":
-      month = "03"
-      break
-    case "Apr":
-      month = "04"
-      break
-    case "May":
-      month = "05"
-      break
-    case "Jun":
-      month = "06"
-      break
-    case "Jul":
-      month = "07"
-      break
-    case "Aug":
-      month = "08"
-      break
-    case "Sep":
-      month = "09"
-      break
-    case "Oct":
-      month = "10"
-      break
-    case "Nov":
-      month = "11"
-      break
-    case "Dec":
-      month = "12"
-      break
-    default:
-      month
-       = "--"
-  }
+  let clock = formatClock(times[4].substring(0,5))
   return `${month}/${day}/${year} @${clock}`
+}
+
+function formatClock(clock){
+	let postfix = "am"
+	let [hour, min] = clock.split(":")
+	if(hour == 0) {
+		hour = 12
+	} else if(hour >= 12) {
+		postfix = "pm"
+		if(hour > 12) {
+			hour -= 12
+		}
+	}
+	return `${hour}:${min}${postfix}`;
+}
+
+function convertMonth(month){
+	switch(month){
+	    case "Jan":
+	      month = "01"
+	      break
+	    case "Feb":
+	      month = "02"
+	      break
+	    case "Mar":
+	      month = "03"
+	      break
+	    case "Apr":
+	      month = "04"
+	      break
+	    case "May":
+	      month = "05"
+	      break
+	    case "Jun":
+	      month = "06"
+	      break
+	    case "Jul":
+	      month = "07"
+	      break
+	    case "Aug":
+	      month = "08"
+	      break
+	    case "Sep":
+	      month = "09"
+	      break
+	    case "Oct":
+	      month = "10"
+	      break
+	    case "Nov":
+	      month = "11"
+	      break
+	    case "Dec":
+	      month = "12"
+	      break
+	    default:
+	      month = "--"
+	  }
+	return month;
 }

@@ -20,7 +20,7 @@ public class ReimbursementTicketDoa {
 		List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
 		Connection conn = ConnectionFactory.getConnection();
 		String sql = "select * from reimbursement_ticket where "
-				+ "employee = ?;";
+				+ "employee = ? order by time_submitted desc;";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
@@ -55,8 +55,14 @@ public class ReimbursementTicketDoa {
 	private static List<ReimbursementTicket> getTickets(boolean isApproved){
 		List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
 		Connection conn = ConnectionFactory.getConnection();
-		String sql = "select * from reimbursement_ticket where "
-				+ "is_approved = " + isApproved + ";";
+		String sql;
+		if(isApproved) {
+			sql = "select * from reimbursement_ticket where "
+					+ "is_approved = true order by time_submitted desc;";
+		} else {
+			sql = "select * from reimbursement_ticket where "
+					+ "is_approved = true order by time_submitted";
+		}
 		try {
 			Statement statement = conn.createStatement();
 			ResultSet rs = statement.executeQuery(sql);

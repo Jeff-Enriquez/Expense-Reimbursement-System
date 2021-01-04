@@ -89,7 +89,7 @@ public class ReimbursementTicket {
 		String year = yearMonthDay[0];
 		String month = yearMonthDay[1];
 		String day = yearMonthDay[2];
-		return day + "/" + month + "/" + year.substring(2);
+		return month + "/" + day + "/" + year.substring(2);
 	}
 	private String formatTime(String time) {
 		String postfix = "am";
