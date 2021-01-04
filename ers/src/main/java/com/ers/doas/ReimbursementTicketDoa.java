@@ -61,7 +61,7 @@ public class ReimbursementTicketDoa {
 					+ "is_approved = true order by time_submitted desc;";
 		} else {
 			sql = "select * from reimbursement_ticket where "
-					+ "is_approved = true order by time_submitted";
+					+ "is_approved = false order by time_submitted";
 		}
 		try {
 			Statement statement = conn.createStatement();

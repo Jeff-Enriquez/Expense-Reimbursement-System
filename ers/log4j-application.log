@@ -158,3 +158,37 @@
 2021-01-03 22:35:10 INFO  ManagerController:97 - User (login): User has requested to view login page.
 2021-01-03 22:35:14 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
 2021-01-03 22:35:14 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:41:01 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:41:05 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:41:07 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:41:41 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:42:02 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:44:20 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:44:59 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:45:10 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:45:51 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:46:03 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:46:06 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 22:46:44 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:18:19 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 23:18:52 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 23:18:56 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-03 23:18:56 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:20:36 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:20:39 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:20:51 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:21:21 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:21:31 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 23:21:38 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-03 23:21:38 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:22:00 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:22:21 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:22:48 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:23:37 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:24:32 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:24:36 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:24:37 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:24:38 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:24:43 INFO  ManagerController:97 - User (login): User has requested to view login page.
+2021-01-03 23:24:46 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-03 23:24:46 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
