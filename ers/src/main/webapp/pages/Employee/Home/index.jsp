@@ -57,7 +57,7 @@
 	        out.print("</div>");
 	        out.print("<div>");
 	        out.print("<p class='ticket-heading'>Amount:</p>");
-	        out.print("<p class='ticket-details'>$" + ticket.getAmount() + "</p>");
+	        out.print("<p class='ticket-details'>$" + String.format("%.2f", ticket.getAmount()) + "</p>");
 	        out.print("</div>");
 	        out.print("<div>");
 	        out.print("<p class='ticket-heading'>Submitted At:</p>");

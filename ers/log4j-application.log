@@ -192,3 +192,9 @@
 2021-01-03 23:24:43 INFO  ManagerController:97 - User (login): User has requested to view login page.
 2021-01-03 23:24:46 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
 2021-01-03 23:24:46 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-03 23:26:13 INFO  EmployeeController:90 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-03 23:26:13 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-03 23:26:43 INFO  EmployeeController:44 - Employee (createTicket): jeff has requested to view create ticket page.
+2021-01-03 23:27:55 INFO  EmployeeController:44 - Employee (createTicket): jeff has requested to view create ticket page.
+2021-01-03 23:28:03 INFO  EmployeeController:55 - Employee (createTicket): jeff has created a new ticket.
+2021-01-03 23:28:03 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.

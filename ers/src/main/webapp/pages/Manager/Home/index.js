@@ -63,7 +63,7 @@ function renderPendingTickets(){
                     </div>
                     <div>
                         <p class="ticket-heading">Amount:</p>
-                        <p class="ticket-details">$${ticket.amount}</p>
+                        <p class="ticket-details">$${(Math.floor(ticket.amount * 100) / 100).toFixed(2)}</p>
                     </div>
                     <div>
                         <p class="ticket-heading">Submitted At:</p>
@@ -103,7 +103,7 @@ function renderPastTickets(){
                     </div>
                     <div>
                         <p class="ticket-heading">Amount:</p>
-                        <p class="ticket-details">$${ticket.amount}</p>
+                        <p class="ticket-details">$${(Math.floor(ticket.amount * 100) / 100).toFixed(2)}</p>
                     </div>
                     <div>
                         <p class="ticket-heading">Submitted At:</p>
