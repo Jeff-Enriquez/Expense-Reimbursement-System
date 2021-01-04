@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERS - Home</title>
     <link rel="stylesheet" type="text/css" href="/pages/nav.css">
+    <link rel="stylesheet" type="text/css" href="/pages/Manager/PendingTickets/index.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <script defer src="/pages/Employee/Home/viewOptionsController.js"></script>
+    <script defer src="/pages/Manager/PendingTickets/index.js"></script>
 </head>
 <body>
     <nav class='navbar'>
@@ -25,6 +26,12 @@
             </a>
         </div>
     </nav>
-    <h1 class="title">Pending Tickets</h1>
+    <div class="heading-container">
+        <h1 id="pending-title" class="title selected">Pending</h1>
+        <h1 class="divider">/</h1>
+        <h1 id="past-title" class="title">Past</h1>
+    </div>
+    <div class="tickets-container">
+    </div>
 </body>
 </html>

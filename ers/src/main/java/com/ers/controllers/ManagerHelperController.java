@@ -14,6 +14,7 @@ public class ManagerHelperController {
 		if(sesh != null && sesh.getAttribute("manager") != null) {
 			isLoggedIn = true;
 		}
+		System.out.println("Is logged in: " + isLoggedIn);
 		if(isLoggedIn) {
 			isLoggedInSwitch(req, resp);
 		} else {			
@@ -22,6 +23,9 @@ public class ManagerHelperController {
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
+			case "/manager/get-pending-tickets":
+				ManagerController.getPendingTickets(req, resp);
+				break;
 			case "/manager/pending-tickets":
 				ManagerController.pendingTickets(req, resp);
 				break;

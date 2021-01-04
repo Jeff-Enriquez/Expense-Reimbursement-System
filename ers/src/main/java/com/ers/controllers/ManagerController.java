@@ -1,6 +1,8 @@
 package com.ers.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,10 +17,22 @@ import com.ers.doas.ManagerDoa;
 import com.ers.doas.ReimbursementTicketDoa;
 import com.ers.models.Manager;
 import com.ers.models.ReimbursementTicket;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ManagerController {
 	private static Logger logger = LogManager.getLogger(ManagerController.class);
 
+	public static void getPendingTickets(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String method = req.getMethod();
+		if(method.equals("GET")) {
+			System.out.println("HIT GET PENDING TICKETS");
+			List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
+			tickets = ReimbursementTicketDoa.getAllPending();
+			resp.setContentType("application/json");
+			ObjectMapper om = new ObjectMapper();
+			resp.getWriter().write(om.writeValueAsString(tickets));
+		}
+	}
 	public static void pendingTickets(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		Manager manager = (Manager) req.getSession().getAttribute("manager");
@@ -36,7 +50,7 @@ public class ManagerController {
 		String method = req.getMethod();
 		Manager manager = (Manager) req.getSession().getAttribute("manager");
 		if(method.equals("GET")) {
-			req.getSession().setAttribute("pendingTickets", ReimbursementTicketDoa.getAllPending());
+			req.getSession().setAttribute("approvedTickets", ReimbursementTicketDoa.getAllApproved());
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Manager/PendingTickets/index.jsp");
 			redis.forward(req, resp);
 			logger.info("Manager (pendingTickets): " + manager.username + " has requested to view pending tickets page.");
