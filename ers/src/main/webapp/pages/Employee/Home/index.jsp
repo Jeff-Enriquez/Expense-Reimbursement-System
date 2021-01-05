@@ -25,8 +25,8 @@
             <a class="navA" href="/employee/create-ticket">Create Ticket</a>
         </div>
         <div class="navDiv">
-            <a class="navA" href="">
-                <span class="material-icons icon">settings</span>
+            <a class="navA" href="/employee/logout">
+                <img class="logout-icon" src="/pages/logout.png"/>
             </a>
         </div>
     </nav>

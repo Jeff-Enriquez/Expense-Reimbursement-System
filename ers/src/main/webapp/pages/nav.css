@@ -24,8 +24,9 @@
 .navbar .navDiv:nth-child(3) {
     right: 0px;
 }
-.icon {
+.logout-icon {
     transform: translateY(3px);
+    width: 30px;
 }
 .navA {
     color: white;

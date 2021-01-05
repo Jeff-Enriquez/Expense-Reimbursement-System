@@ -21,8 +21,8 @@
             <a class="navA" href=""></a>
         </div>
         <div class="navDiv">
-            <a class="navA" href="">
-                <span class="material-icons icon">settings</span>
+            <a class="navA" href="/manager/logout">
+                <img class="logout-icon" src="/pages/logout.png"/>
             </a>
         </div>
     </nav>

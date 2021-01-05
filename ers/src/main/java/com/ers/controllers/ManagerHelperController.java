@@ -41,6 +41,9 @@ public class ManagerHelperController {
 			case "/manager/login":
 				ManagerController.login(req, resp);
 				break;
+			case "/manager/logout":
+				ManagerController.logout(req,resp);
+				break;
 			default:
 				resp.setStatus(404);
 				break;	

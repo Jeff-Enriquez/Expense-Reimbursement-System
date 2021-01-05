@@ -115,4 +115,18 @@ public class ManagerController {
 			resp.setStatus(405);
 		}
 	}
+	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String method = req.getMethod();
+		HttpSession sesh = req.getSession(false);
+		Manager manager = (Manager) sesh.getAttribute("manager");
+		if(method.equals("GET")) {
+			logger.info("Manager (logout): the EMPLOYEE " + manager.username + " is logging out");
+			sesh.setAttribute("manager", null);
+			sesh.invalidate();
+		} else {
+			logger.warn("Manager (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
+			resp.setStatus(405);
+		}
+		resp.sendRedirect("/manager/login");
+	}
 }

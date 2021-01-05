@@ -95,4 +95,18 @@ public class EmployeeController {
 			resp.setStatus(405);
 		}
 	}
+	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String method = req.getMethod();
+		HttpSession sesh = req.getSession(false);
+		Employee employee = (Employee) sesh.getAttribute("employee");
+		if(method.equals("GET")) {
+			logger.info("Employee (logout): the EMPLOYEE " + employee.username + " is logging out");
+			sesh.setAttribute("employee", null);
+			sesh.invalidate();
+		} else {
+			logger.warn("Employee (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
+			resp.setStatus(405);
+		}
+		resp.sendRedirect("/employee/login");
+	}
 }

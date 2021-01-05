@@ -31,8 +31,11 @@ public class EmployeeHelperController {
 		case "/employee/create-ticket":
 			EmployeeController.createTicket(req, resp);
 			break;
-		case "employee/create-employee":
+		case "/employee/create-employee":
 			
+			break;
+		case "/employee/logout":
+			EmployeeController.logout(req,resp);
 			break;
 		default:
 			resp.setStatus(404);
