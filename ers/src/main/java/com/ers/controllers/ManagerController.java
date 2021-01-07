@@ -14,21 +14,24 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import com.ers.doas.ManagerDoa;
+import com.ers.doas.ManagerDoaImp;
 import com.ers.doas.ReimbursementTicketDoa;
+import com.ers.doas.ReimbursementTicketDoaImp;
 import com.ers.models.Manager;
 import com.ers.models.ReimbursementTicket;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ManagerController {
 	private static Logger logger = LogManager.getLogger(ManagerController.class);
-
+	private static ManagerDoa managerDoa = new ManagerDoaImp();
+	private static ReimbursementTicketDoa reimbursementTicketDoa = new ReimbursementTicketDoaImp(); 
 	public static void approveTicket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		Manager manager = (Manager) req.getSession().getAttribute("manager");
 		if(req.getMethod().equals("PUT")) {			
 			ObjectMapper om = new ObjectMapper();
 			ReimbursementTicket ticket = om.readValue(req.getReader(), com.ers.models.ReimbursementTicket.class);
-			ReimbursementTicketDoa.approveTicket(ticket.id);
+			reimbursementTicketDoa.approveTicket(ticket.id);
 			logger.info("Manger (approveTicket): " + manager.username + " approved the ticket: id-" + ticket.id + " employee-" + ticket.employee);
 		} else {
 			logger.warn("Manager (approveTicket) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
@@ -42,7 +45,7 @@ public class ManagerController {
 			ObjectMapper om = new ObjectMapper();
 			ReimbursementTicket ticket = om.readValue(req.getReader(), com.ers.models.ReimbursementTicket.class);
 			System.out.println("TICKET: " + ticket + ticket.employee);
-			ReimbursementTicketDoa.denyTicket(ticket.id);
+			reimbursementTicketDoa.denyTicket(ticket.id);
 			logger.info("Manger (denyTicket): " + manager.username + " denied the ticket: id-" + ticket.id + " employee-" + ticket.employee);
 		} else {
 			logger.warn("Manager (denyTicket) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
@@ -53,7 +56,7 @@ public class ManagerController {
 		String method = req.getMethod();
 		if(method.equals("GET")) {
 			List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
-			tickets = ReimbursementTicketDoa.getAllPending();
+			tickets = reimbursementTicketDoa.getAllPending();
 			resp.setContentType("application/json");
 			ObjectMapper om = new ObjectMapper();
 			resp.getWriter().write(om.writeValueAsString(tickets));
@@ -67,7 +70,7 @@ public class ManagerController {
 		String method = req.getMethod();
 		if(method.equals("GET")) {
 			List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
-			tickets = ReimbursementTicketDoa.getAllApproved();
+			tickets = reimbursementTicketDoa.getAllApproved();
 			resp.setContentType("application/json");
 			ObjectMapper om = new ObjectMapper();
 			resp.getWriter().write(om.writeValueAsString(tickets));
@@ -100,7 +103,7 @@ public class ManagerController {
 			String password = req.getParameter("password");
 			Manager manager = null;
 			try {
-				manager = ManagerDoa.selectManager(username, password);
+				manager = managerDoa.selectManager(username, password);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

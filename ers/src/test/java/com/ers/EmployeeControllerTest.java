@@ -22,6 +22,7 @@ import org.mockito.MockedStatic;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.modules.junit4.PowerMockRunnerDelegate;
 
 import com.ers.controllers.EmployeeController;
 import com.ers.doas.EmployeeDoa;
@@ -32,6 +33,7 @@ import com.ers.models.Employee;
 import com.ers.models.ReimbursementTicket;
 
 @RunWith(PowerMockRunner.class)
+@PowerMockRunnerDelegate(JUnit4.class)
 @PrepareForTest(EmployeeDoa.class)
 class EmployeeControllerTest {
 	

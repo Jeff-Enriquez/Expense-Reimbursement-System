@@ -12,19 +12,22 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import com.ers.doas.EmployeeDoa;
+import com.ers.doas.EmployeeDoaImp;
 import com.ers.doas.ReimbursementTicketDoa;
+import com.ers.doas.ReimbursementTicketDoaImp;
 import com.ers.models.Employee;
 import com.ers.models.ReimbursementTicket;
 
 public class EmployeeController {
 	private static Logger logger = LogManager.getLogger(EmployeeController.class);
-
+	private static EmployeeDoa employeeDoa = new EmployeeDoaImp();
+	private static ReimbursementTicketDoa reimbursementTicketDoa = new ReimbursementTicketDoaImp(); 
 	public static void home(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		HttpSession sesh = req.getSession();
 		Employee employee = (Employee) sesh.getAttribute("employee");
 		if(method.equals("GET")) {
-			employee.setTickets(ReimbursementTicketDoa.selectTickets(employee.username));
+			employee.setTickets(reimbursementTicketDoa.selectTickets(employee.username));
 			sesh.setAttribute("employee", employee);
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Home/index.jsp");
 			logger.info("Employee (home): " + employee.username + " has requested to view home page.");
@@ -50,7 +53,7 @@ public class EmployeeController {
 				Double amount = Double.parseDouble(number);
 				try {
 					ReimbursementTicket ticket = new ReimbursementTicket(amount, requestType, description);
-					boolean isCreated = ReimbursementTicketDoa.createTicket(ticket, employee.username);
+					boolean isCreated = reimbursementTicketDoa.createTicket(ticket, employee.username);
 					if(isCreated) {
 						logger.info("Employee (createTicket): " + employee.username + " has created a new ticket.");
 					} else {
@@ -93,13 +96,13 @@ public class EmployeeController {
 			String password = req.getParameter("password");
 			Employee employee = null;
 			try {				
-				employee = EmployeeDoa.selectEmployee(username, password);
+				employee = employeeDoa.selectEmployee(username, password);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			HttpSession sesh = req.getSession();
 			if(employee != null) {
-				employee.setTickets(ReimbursementTicketDoa.selectTickets(employee.username));
+				employee.setTickets(reimbursementTicketDoa.selectTickets(employee.username));
 				sesh.setAttribute("employee", employee);
 				logger.info("User (login): " + "the EMPLOYEE " + employee.username + " has logged in.");
 			}
