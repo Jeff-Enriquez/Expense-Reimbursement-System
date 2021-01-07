@@ -272,3 +272,32 @@
 2021-01-04 16:18:42 INFO  ManagerController:87 - Manager (home): admin has requested to view home page.
 2021-01-04 16:18:47 INFO  ManagerController:124 - Manager (logout): the EMPLOYEE admin is logging out
 2021-01-04 16:18:47 INFO  ManagerController:98 - User (login): User has requested to view login page.
+2021-01-04 16:19:24 INFO  ManagerController:110 - User (login): the MANAGER admin has logged in.
+2021-01-04 16:19:24 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-04 16:19:28 INFO  ManagerController:86 - Manager (home): admin has requested to view home page.
+2021-01-04 16:19:31 INFO  EmployeeController:76 - User (login): User has requested to view login page.
+2021-01-04 16:19:34 INFO  EmployeeController:90 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-04 16:19:34 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-04 16:19:39 INFO  EmployeeController:31 - Employee (home): jeff has requested to view home page.
+2021-01-04 16:19:40 INFO  EmployeeController:103 - Employee (logout): the EMPLOYEE jeff is logging out
+2021-01-04 16:19:40 INFO  EmployeeController:76 - User (login): User has requested to view login page.
+2021-01-04 16:29:26 INFO  EmployeeController:89 - User (login): User has requested to view login page.
+2021-01-04 16:31:39 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-04 16:32:49 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-04 16:33:20 INFO  EmployeeController:75 - User (createEmployee): User has requested to view create-employee page.
+2021-01-04 17:38:58 INFO  EmployeeController:75 - User (createEmployee): User has requested to view create-employee page.
+2021-01-04 17:40:52 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-04 17:40:54 INFO  EmployeeController:75 - User (createEmployee): User has requested to view create-employee page.
+2021-01-04 17:42:27 INFO  EmployeeController:75 - User (createEmployee): User has requested to view create-employee page.
+2021-01-04 17:42:44 INFO  EmployeeController:75 - User (createEmployee): User has requested to view create-employee page.
+2021-01-04 18:05:08 INFO  EmployeeController:75 - User (createEmployee): User has requested to view create-employee page.
+2021-01-06 13:15:42 INFO  EmployeeController:104 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-06 13:15:42 INFO  EmployeeController:30 - Employee (home): jeff has requested to view home page.
+2021-01-06 13:15:57 INFO  EmployeeController:43 - Employee (createTicket): jeff has requested to view create ticket page.
+2021-01-06 20:47:20 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-06 21:10:25 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-06 21:14:03 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-06 21:18:56 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-06 21:36:30 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-06 21:39:45 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-06 21:40:14 INFO  EmployeeController:88 - User (login): User has requested to view login page.

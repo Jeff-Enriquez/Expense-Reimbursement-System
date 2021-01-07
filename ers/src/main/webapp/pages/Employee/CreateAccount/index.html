@@ -7,36 +7,37 @@
     <link rel="stylesheet" type="text/css" href="/pages/Employee/CreateAccount/index.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <script defer src="/pages/Employee/CreateAccount/index.js"></script>
 </head>
 <body>
     <div class="page-content">
         <h1 class="heading">Create Employee</h1>
         <h6 class="subheading">Expense Reimbursement System</h6>
-        <form class="form">
+        <form class="form" id="submit" method="POST" action="/employee/create-account">
             <div class="entry-container">
-                <input class="input" type="text" placeholder="Username"/>
+                <input id="username" class="input" type="text" name="username" placeholder="Username"/>
             </div>
             <div class="entry-container">
-                <input class="input" type="text" placeholder="Email"/>
+                <input id="email" class="input" type="text" name="email" placeholder="Email"/>
             </div>
             <div class="entry-container">
-                <input class="input" type="text" placeholder="First name"/>
+                <input id="fName" class="input" type="text" name="first_name" placeholder="First name"/>
             </div>
             <div class="entry-container">
-                <input class="input" type="text" placeholder="Last name"/>
+                <input id="lName" class="input" type="text" name="last_name" placeholder="Last name"/>
             </div>
             <div class="entry-container">
-                <input class="input" type="password" placeholder="Password"/>
+                <input id="password" class="input" type="password" name="password" placeholder="Password"/>
             </div>
             <div class="entry-container">
-                <input class="input" type="password" placeholder="Confirm password"/>
+                <input id="cPassword" class="input" type="password" placeholder="Confirm password"/>
             </div>
-            <p class="error-message"></p>
-            <input class="button" type="submit" value="Create Account">
+            <p id="error" class="error-message"></p>
+            <input type="button" onclick="submitForm()" class="button" value="Submit">
         </form>
         <div class="create-account-container">
             <p>or</p>
-            <a class="create-account-link" href="../Login/index.html">Login</a>
+            <a class="create-account-link" href="/employee/login">Login</a>
         </div>
     </div>
 </body>

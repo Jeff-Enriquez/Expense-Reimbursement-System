@@ -27,8 +27,8 @@ public class EmployeeController {
 			employee.setTickets(ReimbursementTicketDoa.selectTickets(employee.username));
 			sesh.setAttribute("employee", employee);
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Home/index.jsp");
-			redis.forward(req, resp);
 			logger.info("Employee (home): " + employee.username + " has requested to view home page.");
+			redis.forward(req, resp);
 		} else {
 			logger.warn("Employee (Invalid request): " + employee.username + " tried to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
@@ -40,8 +40,8 @@ public class EmployeeController {
 		Employee employee = (Employee) req.getSession().getAttribute("employee");
 		if(method.equals("GET")) {
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/CreateTicket/index.html");
-			redis.forward(req, resp);
 			logger.info("Employee (createTicket): " + employee.username + " has requested to view create ticket page.");
+			redis.forward(req, resp);
 		} else if(method.equals("POST")) {
 			String number = req.getParameter("amount");
 			String requestType = req.getParameter("request-type");
@@ -68,12 +68,26 @@ public class EmployeeController {
 			resp.setStatus(405);
 		}
 	}
+	public static void createEmployee(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String method = req.getMethod();
+		System.out.println("CREATE ACCOUNT");
+		if(method.equals("GET")) {
+			logger.info("User (createEmployee): User has requested to view create-employee page.");
+			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/CreateAccount/index.html");
+			redis.forward(req, resp);
+		} else if(method.equals("POST")) {
+			
+		} else {
+			logger.warn("User (Invalid Request): Attempt to make a " + method + " request to " + req.getRequestURI());
+			resp.setStatus(405);
+		}
+	}
 	public static void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {
+			logger.info("User (login): User has requested to view login page.");
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Login/index.html");
 			redis.forward(req, resp);
-			logger.info("User (login): User has requested to view login page.");
 		} else if(method.equals("POST")) {
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
