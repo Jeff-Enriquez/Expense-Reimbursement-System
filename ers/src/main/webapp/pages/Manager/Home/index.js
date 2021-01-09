@@ -127,7 +127,7 @@ function denyTicket(id, employee){
         }
     }
     HTTP.open("PUT", "/manager/deny-ticket")
-    HTTP.send(`{ "id":${id}, "employee":"${employee}" }`)
+    HTTP.send(`{ "id":${id} }`)
 }
 function approveTicket(id, employee){
     const HTTP = new XMLHttpRequest()

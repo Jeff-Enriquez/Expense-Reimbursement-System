@@ -113,7 +113,7 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 	@Override
 	public void denyTicket(Integer id) {
 		Connection conn = ConnectionFactory.getConnection();
-		String sql = "delete from reimbursement_ticket where id = ? && is_approved = false;";
+		String sql = "delete from reimbursement_ticket where id = ? and is_approved is false;";
 		try(PreparedStatement ps = conn.prepareCall(sql)) {
 			ps.setInt(1, id);
 			ps.execute();

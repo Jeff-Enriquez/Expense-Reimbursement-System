@@ -569,3 +569,23 @@
 2021-01-09 13:43:11 INFO  ManagerController:89 - Manager (home): admin has requested to view home page.
 2021-01-09 13:43:15 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE admin is logging out
 2021-01-09 13:43:15 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 14:24:17 INFO  ManagerController:117 - Manager (login): the MANAGER admin has logged in.
+2021-01-09 14:24:17 INFO  ManagerController:91 - Manager (home): admin has requested to view home page.
+2021-01-09 14:24:22 INFO  ManagerController:50 - Manger (denyTicket): admin denied the ticket: id-3 employee-jeff
+2021-01-09 14:24:48 INFO  ManagerController:50 - Manger (denyTicket): admin denied the ticket: id-3 employee-jeff
+2021-01-09 14:24:51 INFO  ManagerController:37 - Manger (approveTicket): admin approved the ticket: id-3 employee-jeff
+2021-01-09 14:29:49 INFO  ManagerController:102 - Manager (login): User has requested to view login page.
+2021-01-09 14:29:52 INFO  ManagerController:117 - Manager (login): the MANAGER admin has logged in.
+2021-01-09 14:29:52 INFO  ManagerController:91 - Manager (home): admin has requested to view home page.
+2021-01-09 14:29:55 INFO  ManagerController:51 - Manger (denyTicket): admin denied the ticket: id-8 employee-jeff
+2021-01-09 14:31:01 INFO  ManagerController:102 - Manager (login): User has requested to view login page.
+2021-01-09 14:31:04 INFO  ManagerController:117 - Manager (login): the MANAGER admin has logged in.
+2021-01-09 14:31:04 INFO  ManagerController:91 - Manager (home): admin has requested to view home page.
+2021-01-09 14:31:06 INFO  ManagerController:51 - Manger (denyTicket): admin denied the ticket: id-8 employee-jeff
+2021-01-09 14:33:28 INFO  ManagerController:103 - Manager (login): User has requested to view login page.
+2021-01-09 14:33:30 INFO  ManagerController:118 - Manager (login): the MANAGER admin has logged in.
+2021-01-09 14:33:30 INFO  ManagerController:92 - Manager (home): admin has requested to view home page.
+2021-01-09 14:33:33 INFO  ManagerController:52 - Manger (denyTicket): admin denied the ticket: id-8 employee-jeff
+2021-01-09 14:33:58 INFO  ManagerController:92 - Manager (home): admin has requested to view home page.
+2021-01-09 14:33:59 INFO  ManagerController:92 - Manager (home): admin has requested to view home page.
+2021-01-09 14:34:01 INFO  ManagerController:52 - Manger (denyTicket): admin denied the ticket: id-8 employee-jeff

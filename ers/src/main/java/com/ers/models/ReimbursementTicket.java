@@ -13,7 +13,7 @@ public class ReimbursementTicket {
 	public Timestamp timeSubmitted;
 	public Boolean isApproved;
 	public String employee;
-	public ReimbursementTicket(){}
+	public ReimbursementTicket(){ super(); }
 	public ReimbursementTicket(Integer id, String employee, Double amount, String requestType, String description, Timestamp timeSubmitted, Boolean isApproved) throws AmountException, RequestTypeException {
 		this.id = id;
 		this.employee = employee;
@@ -115,6 +115,7 @@ public class ReimbursementTicket {
 				"REQUEST_TYPE: " + this.requestType + "\n" +
 				"DESCRIPTION: " + this.description + "\n" +
 				"TIME_SUBMITTED: " + this.timeSubmitted + "\n" +
-				"IS_APPROVED: " + this.isApproved;
+				"IS_APPROVED: " + this.isApproved + "\n" +
+				"EMPLOYEE: " + this.employee;
 	}
 }
