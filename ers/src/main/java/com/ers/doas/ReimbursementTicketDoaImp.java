@@ -18,12 +18,11 @@ import com.ers.util.ConnectionFactory;
 public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 	@Override
 	public List<ReimbursementTicket> selectTickets(String username){
-		List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
+		List<ReimbursementTicket> tickets = new ArrayList<>();
 		Connection conn = ConnectionFactory.getConnection();
 		String sql = "select * from reimbursement_ticket where "
 				+ "employee = ? order by time_submitted desc;";
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+		try(PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setString(1, username);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
@@ -33,14 +32,7 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 				String description = rs.getString("description");
 				Timestamp timeSubmitted = rs.getTimestamp("time_submitted");
 				Boolean isApproved = rs.getBoolean("is_approved");
-				try {
-					ReimbursementTicket ticket = new ReimbursementTicket(id, amount, requestType, description, timeSubmitted, isApproved);
-					tickets.add(ticket);
-				} catch (AmountException e) {
-					e.printStackTrace();
-				} catch (RequestTypeException e) {
-					e.printStackTrace();
-				}
+				tickets.add(newTicket(id, amount, requestType, description, timeSubmitted, isApproved));
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -56,7 +48,7 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 		return getTickets(true);
 	}
 	private List<ReimbursementTicket> getTickets(boolean isApproved){
-		List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
+		List<ReimbursementTicket> tickets = new ArrayList<>();
 		Connection conn = ConnectionFactory.getConnection();
 		String sql;
 		if(isApproved) {
@@ -66,8 +58,7 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 			sql = "select * from reimbursement_ticket where "
 					+ "is_approved = false order by time_submitted";
 		}
-		try {
-			Statement statement = conn.createStatement();
+		try(Statement statement = conn.createStatement()) {
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next()) {
 				Integer id = rs.getInt("id");
@@ -77,14 +68,7 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 				String description = rs.getString("description");
 				Timestamp timeSubmitted = rs.getTimestamp("time_submitted");
 				Boolean approved = rs.getBoolean("is_approved");
-				try {
-					ReimbursementTicket ticket = new ReimbursementTicket(id, employee, amount, requestType, description, timeSubmitted, approved);
-					tickets.add(ticket);
-				} catch (AmountException e) {
-					e.printStackTrace();
-				} catch (RequestTypeException e) {
-					e.printStackTrace();
-				}
+				tickets.add(newTicket(id, employee, amount, requestType, description, timeSubmitted, approved));
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -101,8 +85,7 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 		} else {
 			sql = "call add_reimbursement_ticket(?,?,?);";
 		}
-		try {
-			CallableStatement callSt = conn.prepareCall(sql);
+		try(CallableStatement callSt = conn.prepareCall(sql)) {
 			callSt.setString(1, username);
 			callSt.setDouble(2, ticket.getAmount());
 			callSt.setString(3, ticket.getRequestType());
@@ -120,8 +103,7 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 	public void approveTicket(Integer id) {
 		Connection conn = ConnectionFactory.getConnection();
 		String sql = "update reimbursement_ticket set is_approved = true where id = ?;";
-		try {
-			PreparedStatement ps = conn.prepareCall(sql);
+		try(PreparedStatement ps = conn.prepareCall(sql)) {
 			ps.setInt(1, id);
 			ps.execute();
 		} catch (SQLException e) {
@@ -132,12 +114,30 @@ public class ReimbursementTicketDoaImp implements ReimbursementTicketDoa {
 	public void denyTicket(Integer id) {
 		Connection conn = ConnectionFactory.getConnection();
 		String sql = "delete from reimbursement_ticket where id = ? && is_approved = false;";
-		try {
-			PreparedStatement ps = conn.prepareCall(sql);
+		try(PreparedStatement ps = conn.prepareCall(sql)) {
 			ps.setInt(1, id);
 			ps.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private ReimbursementTicket newTicket(int id, String employee, double amount, String requestType, String description, Timestamp timeSubmitted, boolean approved) {
+		ReimbursementTicket ticket = null;
+		try {
+			ticket = new ReimbursementTicket(id, employee, amount, requestType, description, timeSubmitted, approved);
+		} catch (AmountException|RequestTypeException e) {
+			e.printStackTrace();
+		}
+		return ticket;
+	}
+	private ReimbursementTicket newTicket(int id, double amount, String requestType, String description, Timestamp timeSubmitted, boolean isApproved) {
+		ReimbursementTicket ticket = null;
+		try {
+			ticket = new ReimbursementTicket(id, amount, requestType, description, timeSubmitted, isApproved);
+		} catch (AmountException|RequestTypeException e) {
+			e.printStackTrace();
+		}
+		return ticket;
 	}
 }

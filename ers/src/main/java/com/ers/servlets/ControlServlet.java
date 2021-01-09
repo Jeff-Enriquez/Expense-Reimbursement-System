@@ -15,7 +15,6 @@ public class ControlServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String endpoint = req.getRequestURI();
-		System.out.println(endpoint);
 		/*
 		 * manager will be the first part of the path.
 		 * Example: if the uri is /[first]/[second] then manager == [first]

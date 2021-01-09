@@ -550,3 +550,22 @@
 2021-01-09 13:25:40 INFO  EmployeeController:33 - Employee (home): jeff has requested to view home page.
 2021-01-09 13:26:55 INFO  EmployeeController:46 - Employee (createTicket): jeff has requested to view create ticket page.
 2021-01-09 13:28:11 INFO  EmployeeController:46 - Employee (createTicket): jeff has requested to view create ticket page.
+2021-01-09 13:31:42 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-09 13:31:48 INFO  EmployeeController:103 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-09 13:31:48 INFO  EmployeeController:33 - Employee (home): jeff has requested to view home page.
+2021-01-09 13:31:55 INFO  EmployeeController:46 - Employee (createTicket): jeff has requested to view create ticket page.
+2021-01-09 13:32:04 INFO  EmployeeController:57 - Employee (createTicket): jeff has created a new ticket.
+2021-01-09 13:32:04 INFO  EmployeeController:33 - Employee (home): jeff has requested to view home page.
+2021-01-09 13:32:20 INFO  EmployeeController:116 - Employee (logout): the EMPLOYEE jeff is logging out
+2021-01-09 13:32:20 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-09 13:32:35 INFO  ManagerController:101 - User (login): User has requested to view login page.
+2021-01-09 13:32:40 INFO  ManagerController:114 - User (login): the MANAGER admin has logged in.
+2021-01-09 13:32:40 INFO  ManagerController:90 - Manager (home): admin has requested to view home page.
+2021-01-09 13:33:08 INFO  ManagerController:90 - Manager (home): admin has requested to view home page.
+2021-01-09 13:33:11 INFO  ManagerController:90 - Manager (home): admin has requested to view home page.
+2021-01-09 13:33:31 INFO  ManagerController:127 - Manager (logout): the EMPLOYEE admin is logging out
+2021-01-09 13:33:31 INFO  ManagerController:101 - User (login): User has requested to view login page.
+2021-01-09 13:43:11 INFO  ManagerController:113 - User (login): the MANAGER admin has logged in.
+2021-01-09 13:43:11 INFO  ManagerController:89 - Manager (home): admin has requested to view home page.
+2021-01-09 13:43:15 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE admin is logging out
+2021-01-09 13:43:15 INFO  ManagerController:100 - User (login): User has requested to view login page.

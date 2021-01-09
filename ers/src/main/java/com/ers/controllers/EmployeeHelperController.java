@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class EmployeeHelperController {
+	private EmployeeHelperController() {}
 	public static void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		boolean isLoggedIn = false;
 		HttpSession sesh = req.getSession(false);
@@ -31,9 +32,6 @@ public class EmployeeHelperController {
 		case "/employee/create-ticket":
 			EmployeeController.createTicket(req, resp);
 			break;
-//		case "/employee/create-account":
-//			EmployeeController.createEmployee(req, resp);
-//			break;
 		case "/employee/logout":
 			EmployeeController.logout(req,resp);
 			break;
@@ -47,9 +45,6 @@ public class EmployeeHelperController {
 			case "/employee/login":
 				EmployeeController.login(req, resp);
 				break;
-//			case "/employee/create-account":
-//				EmployeeController.createEmployee(req, resp);
-//				break;
 			default:
 				resp.sendRedirect("/employee/login");
 		}

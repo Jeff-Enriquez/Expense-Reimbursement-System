@@ -1,7 +1,6 @@
 package com.ers.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -17,15 +16,18 @@ import com.ers.doas.ManagerDoa;
 import com.ers.doas.ManagerDoaImp;
 import com.ers.doas.ReimbursementTicketDoa;
 import com.ers.doas.ReimbursementTicketDoaImp;
+import com.ers.exceptions.PasswordException;
+import com.ers.exceptions.UsernameException;
 import com.ers.models.Manager;
 import com.ers.models.ReimbursementTicket;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ManagerController {
+	private ManagerController() {}
 	private static Logger logger = LogManager.getLogger(ManagerController.class);
 	private static ManagerDoa managerDoa = new ManagerDoaImp();
 	private static ReimbursementTicketDoa reimbursementTicketDoa = new ReimbursementTicketDoaImp(); 
-	public static void approveTicket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	public static void approveTicket(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String method = req.getMethod();
 		Manager manager = (Manager) req.getSession().getAttribute("manager");
 		if(req.getMethod().equals("PUT")) {
@@ -38,13 +40,12 @@ public class ManagerController {
 			resp.setStatus(405);
 		}
 	}
-	public static void denyTicket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	public static void denyTicket(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String method = req.getMethod();
 		Manager manager = (Manager) req.getSession().getAttribute("manager");
 		if(req.getMethod().equals("PUT")) {			
 			ObjectMapper om = new ObjectMapper();
 			ReimbursementTicket ticket = om.readValue(req.getReader(), com.ers.models.ReimbursementTicket.class);
-			System.out.println("TICKET: " + ticket + ticket.employee);
 			reimbursementTicketDoa.denyTicket(ticket.id);
 			logger.info("Manger (denyTicket): " + manager.username + " denied the ticket: id-" + ticket.id + " employee-" + ticket.employee);
 			reimbursementTicketDoa.denyTicket(ticket.id);
@@ -53,10 +54,10 @@ public class ManagerController {
 			resp.setStatus(405);
 		}
 	}
-	public static void getPendingTickets(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	public static void getPendingTickets(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {
-			List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
+			List<ReimbursementTicket> tickets;
 			tickets = reimbursementTicketDoa.getAllPending();
 			resp.setContentType("application/json");
 			ObjectMapper om = new ObjectMapper();
@@ -67,10 +68,10 @@ public class ManagerController {
 			resp.setStatus(405);
 		}
 	}
-	public static void getApprovedTickets(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	public static void getApprovedTickets(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {
-			List<ReimbursementTicket> tickets = new ArrayList<ReimbursementTicket>();
+			List<ReimbursementTicket> tickets;
 			tickets = reimbursementTicketDoa.getAllApproved();
 			resp.setContentType("application/json");
 			ObjectMapper om = new ObjectMapper();
@@ -98,28 +99,30 @@ public class ManagerController {
 		if(method.equals("GET")) {
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Manager/Login/index.html");
 			redis.forward(req, resp);
-			logger.info("User (login): User has requested to view login page.");
+			logger.info("Manager (login): User has requested to view login page.");
 		} else if(method.equals("POST")) {
 			String username = req.getParameter("username");
 			String password = req.getParameter("password");
 			Manager manager = null;
 			try {
 				manager = managerDoa.selectManager(username, password);
-			} catch (Exception e) {
-				e.printStackTrace();
+			} catch (UsernameException e) {
+				logger.info("Manager (login): the username: " + username + " does not exist.");
+			} catch (PasswordException e) {
+				logger.info("Manager (login): the password: " + password + " for username: " + username + " is incorrect.");
 			}
 			HttpSession sesh = req.getSession();
 			if(manager != null) {
 				sesh.setAttribute("manager", manager);
-				logger.info("User (login): " + "the MANAGER " + manager.username + " has logged in.");
+				logger.info("Manager (login): the MANAGER " + manager.username + " has logged in.");
 			}
 			resp.sendRedirect("/manager");
 		} else {
-			logger.warn("User (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
+			logger.warn("Manager (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
 		}
 	}
-	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String method = req.getMethod();
 		HttpSession sesh = req.getSession(false);
 		Manager manager = (Manager) sesh.getAttribute("manager");

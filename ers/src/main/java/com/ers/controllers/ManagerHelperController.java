@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class ManagerHelperController {
+	private ManagerHelperController() {}
 	public static void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		boolean isLoggedIn = false;
 		HttpSession sesh = req.getSession(false);
 		if(sesh != null && sesh.getAttribute("manager") != null) {
 			isLoggedIn = true;
 		}
-		System.out.println("Is logged in: " + isLoggedIn);
 		if(isLoggedIn) {
 			isLoggedInSwitch(req, resp);
 		} else {			
@@ -53,9 +53,6 @@ public class ManagerHelperController {
 		switch(req.getRequestURI()) {
 			case "/manager/login":
 				ManagerController.login(req, resp);
-				break;
-			case "/manager/create-manager":
-				
 				break;
 			default:
 				resp.sendRedirect("/manager/login");

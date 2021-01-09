@@ -15,10 +15,13 @@ import com.ers.doas.EmployeeDoa;
 import com.ers.doas.EmployeeDoaImp;
 import com.ers.doas.ReimbursementTicketDoa;
 import com.ers.doas.ReimbursementTicketDoaImp;
+import com.ers.exceptions.PasswordException;
+import com.ers.exceptions.UsernameException;
 import com.ers.models.Employee;
 import com.ers.models.ReimbursementTicket;
 
 public class EmployeeController {
+	private EmployeeController() {}
 	private static Logger logger = LogManager.getLogger(EmployeeController.class);
 	private static EmployeeDoa employeeDoa = new EmployeeDoaImp();
 	private static ReimbursementTicketDoa reimbursementTicketDoa = new ReimbursementTicketDoaImp(); 
@@ -67,24 +70,10 @@ public class EmployeeController {
 			resp.setStatus(405);
 		}
 	}
-//	public static void createEmployee(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-//		String method = req.getMethod();
-//		System.out.println("CREATE ACCOUNT");
-//		if(method.equals("GET")) {
-//			logger.info("User (createEmployee): User has requested to view create-employee page.");
-//			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/CreateAccount/index.html");
-//			redis.forward(req, resp);
-//		} else if(method.equals("POST")) {
-//			
-//		} else {
-//			logger.warn("User (Invalid Request): Attempt to make a " + method + " request to " + req.getRequestURI());
-//			resp.setStatus(405);
-//		}
-//	}
 	public static void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {
-			logger.info("User (login): User has requested to view login page.");
+			logger.info("Employee (login): User has requested to view login page.");
 			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/Login/index.html");
 			redis.forward(req, resp);
 		} else if(method.equals("POST")) {
@@ -93,22 +82,24 @@ public class EmployeeController {
 			Employee employee = null;
 			try {				
 				employee = employeeDoa.selectEmployee(username, password);
-			} catch (Exception e) {
-				e.printStackTrace();
+			} catch (UsernameException e) {
+				logger.info("Employee (login): the username: " + username + " does not exist.");
+			} catch (PasswordException e) {
+				logger.info("Employee (login): the password: " + password + " for username: " + username + " is incorrect.");
 			}
 			HttpSession sesh = req.getSession();
 			if(employee != null) {
 				employee.setTickets(reimbursementTicketDoa.selectTickets(employee.username));
 				sesh.setAttribute("employee", employee);
-				logger.info("User (login): " + "the EMPLOYEE " + employee.username + " has logged in.");
+				logger.info("Employee (login): " + employee.username + " has logged in.");
 			}
 			resp.sendRedirect("/employee");
 		} else {
-			logger.warn("User (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
+			logger.warn("Employee (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
 		}
 	}
-	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String method = req.getMethod();
 		HttpSession sesh = req.getSession(false);
 		Employee employee = (Employee) sesh.getAttribute("employee");
