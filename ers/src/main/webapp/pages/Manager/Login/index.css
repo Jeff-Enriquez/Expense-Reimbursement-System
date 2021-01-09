@@ -8,22 +8,30 @@
       url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
       url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
       url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
-  }
+}
+:root {
+    --card-background-color: white;
+    --page-background-color: rgb(249, 249, 249);
+    --button-background-color: rgb(133, 214, 242);
+    --card-shadow-color: rgba(128, 128, 128, 0.1);
+}
 * {
-    /* border: 1px solid black; */
     box-sizing: border-box;
 }
 body {
     margin: 0;
-    background-color: antiquewhite;
+    background-color: var(--page-background-color);
 }
 .page-content {
     margin: 50px auto;
     width: 320px;
     padding: 40px 25px;
-    background-color: white;
-    border-radius: 10px;
     font-family: Poppins-Bold, sans-serif;
+    border-radius: 10px;
+    background-color: var(--card-background-color);
+    box-shadow: 0px 4px 5px var(--card-shadow-color), 
+        0px 3px 14px  var(--card-shadow-color), 
+        0px 8px 10px  var(--card-shadow-color);
 }
 .heading, .subheading {
 	text-align: center;
@@ -82,18 +90,5 @@ body {
     border: none;
     outline: none;
     font-weight: 600;
-    background-color: rgb(255, 194, 80);
-}
-.create-account-container {
-    border-top: 1px solid gray;
-    width: 90%;
-    margin: 10px auto 0 auto;
-}
-.create-account-container * {
-    color: gray;
-    font-size: 12px;
-    text-align: center;
-}
-.create-account-link {
-    display: block;
+    background-color: var(--button-background-color);
 }
