@@ -10,41 +10,46 @@ import javax.servlet.http.HttpServletResponse;
 import com.ers.controllers.EmployeeHelperController;
 import com.ers.controllers.ManagerHelperController;
 
+@SuppressWarnings("serial")
 public class ControlServlet extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		String endpoint = req.getRequestURI();
-		/*
-		 * manager will be the first part of the path.
-		 * Example: if the uri is /[first]/[second] then manager == [first]
-		 */
 		String uri1 = "";
 		String[] uris = endpoint.split("/");
 		if(endpoint.length() > 1) {
 			uri1 = uris[1];
 		}
 		if(uri1.equals("manager")) {
-			ManagerHelperController.process(req, resp);
+			try {				
+				ManagerHelperController.process(req, resp);
+			} catch(ServletException | IOException e) {
+				e.printStackTrace();
+			}
 		} else if(uri1.equals("employee")) {
-			EmployeeHelperController.process(req, resp);
+			try {				
+				EmployeeHelperController.process(req, resp);
+			} catch(ServletException | IOException e) {
+				e.printStackTrace();
+			}
 		} else {
 			resp.setStatus(404);
 		}
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
 		doGet(req, resp);
 	}
 
 	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) {
 		doGet(req, resp);
 	}
 
 	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
 		doGet(req, resp);
 	}
 

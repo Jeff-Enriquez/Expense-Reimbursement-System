@@ -21,10 +21,7 @@ public class ConnectionFactory {
 		      con = DriverManager.getConnection(jdbcUrl);
 		      conn = con;
 		    }
-		    catch (ClassNotFoundException e) { 
-		    	e.printStackTrace();
-		    }
-		    catch (SQLException e) { 
+		    catch (ClassNotFoundException | SQLException e) { 
 		    	e.printStackTrace();
 		    }
 		}
