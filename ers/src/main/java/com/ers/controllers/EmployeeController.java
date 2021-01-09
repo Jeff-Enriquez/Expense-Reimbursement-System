@@ -51,16 +51,12 @@ public class EmployeeController {
 			String description = req.getParameter("description");
 			try {
 				Double amount = Double.parseDouble(number);
-				try {
-					ReimbursementTicket ticket = new ReimbursementTicket(amount, requestType, description);
-					boolean isCreated = reimbursementTicketDoa.createTicket(ticket, employee.username);
-					if(isCreated) {
-						logger.info("Employee (createTicket): " + employee.username + " has created a new ticket.");
-					} else {
-						logger.warn("Employee (createTicket): " + employee.username + " attempted to create a ticket but was unable to do so.");
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
+				ReimbursementTicket ticket = new ReimbursementTicket(amount, requestType, description);
+				boolean isCreated = reimbursementTicketDoa.createTicket(ticket, employee.username);
+				if(isCreated) {
+					logger.info("Employee (createTicket): " + employee.username + " has created a new ticket.");
+				} else {
+					logger.warn("Employee (createTicket): " + employee.username + " attempted to create a ticket but was unable to do so.");
 				}
 			} catch (Exception e){
 				e.printStackTrace();
@@ -71,20 +67,20 @@ public class EmployeeController {
 			resp.setStatus(405);
 		}
 	}
-	public static void createEmployee(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		String method = req.getMethod();
-		System.out.println("CREATE ACCOUNT");
-		if(method.equals("GET")) {
-			logger.info("User (createEmployee): User has requested to view create-employee page.");
-			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/CreateAccount/index.html");
-			redis.forward(req, resp);
-		} else if(method.equals("POST")) {
-			
-		} else {
-			logger.warn("User (Invalid Request): Attempt to make a " + method + " request to " + req.getRequestURI());
-			resp.setStatus(405);
-		}
-	}
+//	public static void createEmployee(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+//		String method = req.getMethod();
+//		System.out.println("CREATE ACCOUNT");
+//		if(method.equals("GET")) {
+//			logger.info("User (createEmployee): User has requested to view create-employee page.");
+//			RequestDispatcher redis = req.getRequestDispatcher("/pages/Employee/CreateAccount/index.html");
+//			redis.forward(req, resp);
+//		} else if(method.equals("POST")) {
+//			
+//		} else {
+//			logger.warn("User (Invalid Request): Attempt to make a " + method + " request to " + req.getRequestURI());
+//			resp.setStatus(405);
+//		}
+//	}
 	public static void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		if(method.equals("GET")) {

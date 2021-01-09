@@ -301,3 +301,252 @@
 2021-01-06 21:36:30 INFO  EmployeeController:88 - User (login): User has requested to view login page.
 2021-01-06 21:39:45 INFO  EmployeeController:88 - User (login): User has requested to view login page.
 2021-01-06 21:40:14 INFO  EmployeeController:88 - User (login): User has requested to view login page.
+2021-01-07 15:07:06 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:11:40 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:13:04 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:13:44 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:15:00 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:19:49 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:21:36 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:23:29 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:25:52 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:27:55 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:28:19 INFO  EmployeeController:120 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-07 15:28:19 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:29:02 INFO  EmployeeController:120 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-07 15:29:02 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:32:43 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:33:14 INFO  EmployeeController:120 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-07 15:33:14 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:35:46 INFO  EmployeeController:120 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-07 15:35:46 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:36:58 INFO  EmployeeController:120 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-07 15:36:58 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:38:43 INFO  EmployeeController:120 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-07 15:38:44 INFO  EmployeeController:33 - Employee (home): userName has requested to view home page.
+2021-01-07 15:38:44 INFO  EmployeeController:91 - User (login): User has requested to view login page.
+2021-01-07 15:40:13 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 15:51:56 INFO  EmployeeController:33 - Employee (home): userName has requested to view home page.
+2021-01-08 15:51:56 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 15:51:56 INFO  EmployeeController:116 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-08 15:51:56 WARN  EmployeeController:36 - Employee (Invalid request): userName tried to make a POST request to null
+2021-01-08 15:51:56 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 15:51:56 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-08 15:54:37 INFO  EmployeeController:33 - Employee (home): userName has requested to view home page.
+2021-01-08 15:54:37 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 15:54:37 INFO  EmployeeController:116 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-08 15:54:37 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 15:54:37 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-08 15:58:27 INFO  EmployeeController:33 - Employee (home): userName has requested to view home page.
+2021-01-08 15:58:27 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 15:58:27 INFO  EmployeeController:116 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-08 15:58:27 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 15:58:27 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-08 16:02:04 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:02:04 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:02:40 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:02:40 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:02:40 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:16:38 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:16:38 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:16:39 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:19:21 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:19:21 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:19:21 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:22:58 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:22:58 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:22:59 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:23:30 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:23:30 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:23:30 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:28:13 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:28:13 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:28:13 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:31:33 INFO  EmployeeController:33 - Employee (home): userName has requested to view home page.
+2021-01-08 16:31:33 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 16:31:33 INFO  EmployeeController:116 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:31:33 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-08 16:31:33 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-08 16:40:35 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:40:35 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:40:35 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:41:07 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:41:07 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:41:07 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:46:30 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:46:31 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:46:32 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:48:21 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:48:21 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:48:22 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:51:55 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:51:55 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:51:56 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 16:51:59 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 16:51:59 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 16:52:00 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:09:16 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:09:16 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:09:17 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:10:23 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:10:23 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:10:24 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:12:37 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:12:37 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:12:37 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:13:35 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:13:35 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:13:35 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:13:37 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:13:37 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:13:39 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:13:55 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:13:55 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:13:56 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:14:04 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:14:04 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:14:05 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:14:07 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:14:07 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:14:08 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:15:37 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:15:37 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:15:38 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:16:03 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:16:03 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:16:03 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:16:11 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:16:11 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:16:11 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:16:14 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:16:14 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:16:15 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:16:25 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:16:25 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:16:27 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:16:34 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:16:34 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:16:35 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:23:34 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:23:34 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:23:35 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:24:06 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:24:06 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:24:07 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:24:29 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-08 17:24:29 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:24:30 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-08 17:25:11 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-08 17:25:11 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-08 17:25:12 INFO  ManagerController:51 - Manger (denyTicket): userName denied the ticket: id-0 employee-null
+2021-01-08 17:25:12 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:06:04 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:06:04 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:06:05 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:07:16 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:07:16 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:07:17 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:08:26 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:08:26 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:08:27 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:10:31 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:10:31 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:10:33 INFO  ManagerController:51 - Manger (denyTicket): userName denied the ticket: id-0 employee-null
+2021-01-09 10:10:33 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:11:11 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:11:11 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:11:12 INFO  ManagerController:51 - Manger (denyTicket): userName denied the ticket: id-0 employee-null
+2021-01-09 10:11:12 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:11:49 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:11:49 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:11:51 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-0 employee-userName
+2021-01-09 10:11:51 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:12:25 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:12:25 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:12:27 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-0 employee-userName
+2021-01-09 10:12:27 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:12:50 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:12:50 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:12:51 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-0 employee-userName
+2021-01-09 10:12:51 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:14:13 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:14:13 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:14:14 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-0 employee-userName
+2021-01-09 10:14:14 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:16:01 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:16:01 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:16:02 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:16:14 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:16:14 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:16:15 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-0 employee-userName
+2021-01-09 10:16:15 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:16:34 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:16:34 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:16:35 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:17:33 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:17:33 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:17:34 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-0 employee-userName
+2021-01-09 10:17:34 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:20:09 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:20:09 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:20:10 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-1 employee-userName
+2021-01-09 10:20:10 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:23:18 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:23:18 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:23:19 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-1 employee-userName
+2021-01-09 10:23:19 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:24:41 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:24:41 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:24:43 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-1 employee-userName
+2021-01-09 10:24:43 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:25:47 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:25:47 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:25:48 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-1 employee-userName
+2021-01-09 10:25:48 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:27:27 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:27:27 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:27:27 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:29:23 INFO  ManagerController:89 - Manager (home): userName has requested to view home page.
+2021-01-09 10:29:23 INFO  ManagerController:126 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:29:25 INFO  ManagerController:49 - Manger (denyTicket): userName denied the ticket: id-1 employee-userName
+2021-01-09 10:29:25 INFO  ManagerController:100 - User (login): User has requested to view login page.
+2021-01-09 10:34:18 INFO  ManagerController:90 - Manager (home): userName has requested to view home page.
+2021-01-09 10:34:18 INFO  ManagerController:127 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:34:19 INFO  ManagerController:101 - User (login): User has requested to view login page.
+2021-01-09 10:35:05 INFO  ManagerController:90 - Manager (home): userName has requested to view home page.
+2021-01-09 10:35:05 INFO  ManagerController:127 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:35:06 INFO  ManagerController:101 - User (login): User has requested to view login page.
+2021-01-09 10:35:24 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:35:24 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:35:25 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:37:28 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:37:28 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:37:29 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:38:49 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:38:49 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:38:50 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:40:27 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:40:27 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:40:29 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:44:06 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:44:06 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:44:07 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:46:25 INFO  ManagerController:91 - Manager (home): userName has requested to view home page.
+2021-01-09 10:46:25 INFO  ManagerController:128 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:46:27 INFO  ManagerController:102 - User (login): User has requested to view login page.
+2021-01-09 10:47:41 INFO  ManagerController:90 - Manager (home): userName has requested to view home page.
+2021-01-09 10:47:41 INFO  ManagerController:127 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:47:42 INFO  ManagerController:101 - User (login): User has requested to view login page.
+2021-01-09 10:49:19 INFO  EmployeeController:33 - Employee (home): userName has requested to view home page.
+2021-01-09 10:49:19 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-09 10:49:19 INFO  EmployeeController:116 - Employee (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:49:19 INFO  EmployeeController:46 - Employee (createTicket): userName has requested to view create ticket page.
+2021-01-09 10:49:19 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-09 10:49:19 INFO  ManagerController:90 - Manager (home): userName has requested to view home page.
+2021-01-09 10:49:19 INFO  ManagerController:127 - Manager (logout): the EMPLOYEE userName is logging out
+2021-01-09 10:49:20 INFO  ManagerController:101 - User (login): User has requested to view login page.
+2021-01-09 13:25:35 INFO  EmployeeController:87 - User (login): User has requested to view login page.
+2021-01-09 13:25:40 INFO  EmployeeController:103 - User (login): the EMPLOYEE jeff has logged in.
+2021-01-09 13:25:40 INFO  EmployeeController:33 - Employee (home): jeff has requested to view home page.
+2021-01-09 13:26:55 INFO  EmployeeController:46 - Employee (createTicket): jeff has requested to view create ticket page.
+2021-01-09 13:28:11 INFO  EmployeeController:46 - Employee (createTicket): jeff has requested to view create ticket page.

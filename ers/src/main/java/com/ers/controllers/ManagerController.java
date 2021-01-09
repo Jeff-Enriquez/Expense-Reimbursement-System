@@ -28,7 +28,7 @@ public class ManagerController {
 	public static void approveTicket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		String method = req.getMethod();
 		Manager manager = (Manager) req.getSession().getAttribute("manager");
-		if(req.getMethod().equals("PUT")) {			
+		if(req.getMethod().equals("PUT")) {
 			ObjectMapper om = new ObjectMapper();
 			ReimbursementTicket ticket = om.readValue(req.getReader(), com.ers.models.ReimbursementTicket.class);
 			reimbursementTicketDoa.approveTicket(ticket.id);
@@ -47,6 +47,7 @@ public class ManagerController {
 			System.out.println("TICKET: " + ticket + ticket.employee);
 			reimbursementTicketDoa.denyTicket(ticket.id);
 			logger.info("Manger (denyTicket): " + manager.username + " denied the ticket: id-" + ticket.id + " employee-" + ticket.employee);
+			reimbursementTicketDoa.denyTicket(ticket.id);
 		} else {
 			logger.warn("Manager (denyTicket) - Invalid Request: " + manager.username + " tried to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);

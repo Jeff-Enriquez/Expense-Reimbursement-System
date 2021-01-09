@@ -48,7 +48,7 @@ public class ReimbursementTicket {
 	}
 	public void setAmount(Double amount) throws AmountException {
 		if(amount > 0) {
-			this.amount = amount;
+			this.amount = Math.floor(amount * 100.0) / 100.0;
 		} else {
 			throw new AmountException("ReimbursementTicket: cannot set a negative amount");
 		}
