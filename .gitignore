@@ -1,3 +1,5 @@
+Servers/
+ers/log4j-application.log
 ##############################
 ## Java
 ##############################
@@ -30,6 +32,7 @@ buildNumber.properties
 bin/
 tmp/
 .metadata
+.sonarlint
 .classpath
 .project
 *.tmp
