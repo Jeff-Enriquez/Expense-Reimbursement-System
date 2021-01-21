@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERS - Home</title>
-    <link rel="stylesheet" type="text/css" href="/pages/nav.css">
-    <link rel="stylesheet" type="text/css" href="/pages/Manager/Home/index.css">
+    <link rel="stylesheet" type="text/css" href="/ers/pages/nav.css">
+    <link rel="stylesheet" type="text/css" href="/ers/pages/Manager/Home/index.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <script defer src="/pages/Manager/Home/index.js"></script>
+    <script defer src="/ers/pages/Manager/Home/index.js"></script>
 </head>
 <body>
     <nav class='navbar'>
@@ -21,8 +21,8 @@
             <a class="navA" href=""></a>
         </div>
         <div class="navDiv">
-            <a class="navA" href="/manager/logout">
-                <img class="logout-icon" src="/pages/logout.png"/>
+            <a class="navA" href="/ers/manager/logout">
+                <img class="logout-icon" src="/ers/pages/logout.png"/>
             </a>
         </div>
     </nav>

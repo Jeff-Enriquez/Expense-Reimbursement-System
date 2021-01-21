@@ -64,7 +64,7 @@ public class EmployeeController {
 			} catch (Exception e){
 				e.printStackTrace();
 			}
-			resp.sendRedirect("/employee");
+			resp.sendRedirect("/ers/employee");
 		} else {
 			logger.warn("Employee (Invalid request): " + employee.username + " tried to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
@@ -93,7 +93,7 @@ public class EmployeeController {
 				sesh.setAttribute("employee", employee);
 				logger.info("Employee (login): " + employee.username + " has logged in.");
 			}
-			resp.sendRedirect("/employee");
+			resp.sendRedirect("/ers/employee");
 		} else {
 			logger.warn("Employee (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
@@ -111,6 +111,6 @@ public class EmployeeController {
 			logger.warn("Employee (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
 		}
-		resp.sendRedirect("/employee/login");
+		resp.sendRedirect("/ers/employee/login");
 	}
 }

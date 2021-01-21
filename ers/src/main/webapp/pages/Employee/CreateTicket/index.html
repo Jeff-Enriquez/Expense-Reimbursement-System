@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERS - Create Ticket</title>
-    <link rel="stylesheet" type="text/css" href="/pages/Employee/CreateTicket/index.css">
-    <link rel="stylesheet" type="text/css" href="/pages/nav.css">
+    <link rel="stylesheet" type="text/css" href="/ers/pages/Employee/CreateTicket/index.css">
+    <link rel="stylesheet" type="text/css" href="/ers/pages/nav.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
 <body>
     <nav class='navbar'>
         <div class="navDiv">
-            <a class="navA" href="/employee">
+            <a class="navA" href="/ers/employee">
                 <img class="navImg" src="https://img.icons8.com/small/32/ffffff/home.png"/>
             </a>
         </div>
@@ -20,14 +20,14 @@
             <a class="navA" href="">Create Ticket</a>
         </div>
         <div class="navDiv">
-            <a class="navA" href="/employee/logout">
-                <img class="logout-icon" src="/pages/logout.png"/>
+            <a class="navA" href="/ers/employee/logout">
+                <img class="logout-icon" src="/ers/pages/logout.png"/>
             </a>
         </div>
     </nav>
     <h1 class="title">Create Ticket</h1>
     <div class="create-ticket-container">
-        <form class="form" method="POST" action="/employee/create-ticket">
+        <form class="form" method="POST" action="/ers/employee/create-ticket">
             <div class="input-container">
                 <p class="input-heading">Amount</p>
                 <input required class="input" type="number" min="1" step=".01" name="amount" placeholder=""/>

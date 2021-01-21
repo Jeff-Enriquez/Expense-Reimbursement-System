@@ -27,7 +27,7 @@ function getPendingTickets() {
             renderPendingTickets()
         }
     }
-    HTTP.open("GET", "/manager/get-pending-tickets")
+    HTTP.open("GET", "/ers/manager/get-pending-tickets")
     HTTP.send()
 }
 
@@ -39,7 +39,7 @@ function getPastTickets() {
             renderPastTickets()
         }
     }
-    HTTP.open("GET", "/manager/get-past-tickets")
+    HTTP.open("GET", "/ers/manager/get-past-tickets")
     HTTP.send()
 }
 
@@ -126,7 +126,7 @@ function denyTicket(id, employee){
             getPendingTickets()
         }
     }
-    HTTP.open("PUT", "/manager/deny-ticket")
+    HTTP.open("PUT", "/ers/manager/deny-ticket")
     HTTP.send(`{ "id":${id} }`)
 }
 function approveTicket(id, employee){
@@ -136,7 +136,7 @@ function approveTicket(id, employee){
             getPendingTickets()
         }
     }
-    HTTP.open("PUT", "/manager/approve-ticket")
+    HTTP.open("PUT", "/ers/manager/approve-ticket")
     HTTP.send(`{ "id":${id}, "employee":"${employee}" }`)
 }
 

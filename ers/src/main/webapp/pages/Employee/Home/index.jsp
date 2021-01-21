@@ -8,11 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERS - Home</title>
-    <link rel="stylesheet" type="text/css" href="/pages/Employee/Home/index.css">
-    <link rel="stylesheet" type="text/css" href="/pages/nav.css">
+    <link rel="stylesheet" type="text/css" href="/ers/pages/Employee/Home/index.css">
+    <link rel="stylesheet" type="text/css" href="/ers/pages/nav.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <script defer src="/pages/Employee/Home/viewOptionsController.js"></script>
+    <script defer src="/ers/pages/Employee/Home/viewOptionsController.js"></script>
 </head>
 <body>
     <nav class='navbar'>
@@ -22,11 +22,11 @@
             </a>
         </div>
         <div class="navDiv">
-            <a class="navA" href="/employee/create-ticket">Create Ticket</a>
+            <a class="navA" href="/ers/employee/create-ticket">Create Ticket</a>
         </div>
         <div class="navDiv">
-            <a class="navA" href="/employee/logout">
-                <img class="logout-icon" src="/pages/logout.png"/>
+            <a class="navA" href="/ers/employee/logout">
+                <img class="logout-icon" src="/ers/pages/logout.png"/>
             </a>
         </div>
     </nav>

@@ -23,16 +23,16 @@ public class EmployeeHelperController {
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
-		case "/employee":
+		case "/ers/employee":
 			EmployeeController.home(req, resp);
 			break;
-		case "/employee/login":
+		case "/ers/employee/login":
 			EmployeeController.login(req, resp);
 			break;
-		case "/employee/create-ticket":
+		case "/ers/employee/create-ticket":
 			EmployeeController.createTicket(req, resp);
 			break;
-		case "/employee/logout":
+		case "/ers/employee/logout":
 			EmployeeController.logout(req,resp);
 			break;
 		default:
@@ -42,11 +42,11 @@ public class EmployeeHelperController {
 	}
 	private static void notLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
-			case "/employee/login":
+			case "/ers/employee/login":
 				EmployeeController.login(req, resp);
 				break;
 			default:
-				resp.sendRedirect("/employee/login");
+				resp.sendRedirect("/ers/employee/login");
 		}
 	}
 }

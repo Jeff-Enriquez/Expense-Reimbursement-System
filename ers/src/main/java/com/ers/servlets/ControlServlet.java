@@ -19,7 +19,7 @@ public class ControlServlet extends HttpServlet {
 		String uri1 = "";
 		String[] uris = endpoint.split("/");
 		if(endpoint.length() > 1) {
-			uri1 = uris[1];
+			uri1 = uris[2];
 		}
 		if(uri1.equals("manager")) {
 			try {				

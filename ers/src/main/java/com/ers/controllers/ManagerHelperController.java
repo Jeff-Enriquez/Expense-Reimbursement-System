@@ -23,25 +23,25 @@ public class ManagerHelperController {
 	}
 	private static void isLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
-			case "/manager":
+			case "/ers/manager":
 				ManagerController.home(req, resp);
 				break;
-			case "/manager/get-pending-tickets":
+			case "/ers/manager/get-pending-tickets":
 				ManagerController.getPendingTickets(req, resp);
 				break;
-			case "/manager/get-past-tickets":
+			case "/ers/manager/get-past-tickets":
 				ManagerController.getApprovedTickets(req, resp);
 				break;
-			case "/manager/deny-ticket":
+			case "/ers/manager/deny-ticket":
 				ManagerController.denyTicket(req, resp);
 				break;
-			case "/manager/approve-ticket":
+			case "/ers/manager/approve-ticket":
 				ManagerController.approveTicket(req, resp);
 				break;
-			case "/manager/login":
+			case "/ers/manager/login":
 				ManagerController.login(req, resp);
 				break;
-			case "/manager/logout":
+			case "/ers/manager/logout":
 				ManagerController.logout(req,resp);
 				break;
 			default:
@@ -51,11 +51,11 @@ public class ManagerHelperController {
 	}
 	private static void notLoggedInSwitch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		switch(req.getRequestURI()) {
-			case "/manager/login":
+			case "/ers/manager/login":
 				ManagerController.login(req, resp);
 				break;
 			default:
-				resp.sendRedirect("/manager/login");
+				resp.sendRedirect("/ers/manager/login");
 		}
 	}
 }

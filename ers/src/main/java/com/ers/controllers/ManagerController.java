@@ -115,7 +115,7 @@ public class ManagerController {
 				sesh.setAttribute("manager", manager);
 				logger.info("Manager (login): the MANAGER " + manager.username + " has logged in.");
 			}
-			resp.sendRedirect("/manager");
+			resp.sendRedirect("/ers/manager");
 		} else {
 			logger.warn("Manager (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
@@ -133,6 +133,6 @@ public class ManagerController {
 			logger.warn("Manager (Invalid request): Attempt to make a " + method + " request to " + req.getRequestURI());
 			resp.setStatus(405);
 		}
-		resp.sendRedirect("/manager/login");
+		resp.sendRedirect("/ers/manager/login");
 	}
 }
